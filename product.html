@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>abayat | Premium Abayas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">Premium abayas up to <b>40% off</b> · Free delivery on orders above Rs. 15,000 · Easy returns</div>
+
+<header>
+  <div class="wrap head">
+    <button class="ib burger" aria-label="Menu" id="burger"><svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    <a class="logo" href="index.html"><img src="images/logo.png" alt="abayat – modest wear, elegant you"></a>
+    <nav class="nav" id="nav">
+      <a href="index.html#categories">Shop by style</a>
+      <a href="index.html#signature">Signature</a>
+      <a href="index.html#trending">All abayas</a>
+      <a href="index.html#edit">The abaya edit</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="icons">
+      <a class="ib" aria-label="WhatsApp us" data-wa target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4 20l1.3-3.9A8 8 0 1112 20a8 8 0 01-3.9-1L4 20z"/></svg></a>
+      <button class="ib" aria-label="Open cart" id="openCart"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg><span class="badge" id="count">0</span></button>
+    </div>
+  </div>
+</header>
+
+<section class="sec pd-sec">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Home</a> / <a href="index.html#trending">Abayas</a> / <span id="crumb"></span></div>
+    <div class="pd" id="pd"></div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="kicker">You may also like</div>
+    <h2 class="title" style="margin-bottom:22px">More abayas</h2>
+    <div class="grid4" id="related"></div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="fgrid">
+      <div><h4>Order with us</h4><ul><li>WhatsApp: <a data-wa target="_blank" rel="noopener">0333 1234567</a></li><li>Cash on delivery</li><li>Delivery all over Pakistan</li></ul></div>
+      <div><h4>Customer care</h4><ul><li><a href="#">Return &amp; exchange policy</a></li><li><a href="#">Shipping policy</a></li><li><a href="#">Privacy policy</a></li><li><a href="#">Size guide</a></li><li><a data-wa target="_blank" rel="noopener">Contact us</a></li></ul></div>
+      <div><h4>Find us on</h4><ul><li><a href="#">Facebook</a></li><li><a href="#">Instagram</a></li><li><a data-wa target="_blank" rel="noopener">WhatsApp</a></li></ul></div>
+      <div>
+        <h4>Sign up for our newsletter</h4>
+        <form class="nl" onsubmit="event.preventDefault();toast('Thank you for subscribing');this.reset()">
+          <input type="email" required placeholder="Enter your email address" aria-label="Email address"><button>SUBMIT</button>
+        </form>
+      </div>
+    </div>
+    <div class="copy"><span>© 2026 abayat. All rights reserved.</span><span>Privacy policy · Refund policy · Terms of service</span></div>
+  </div>
+</footer>
+
+<a class="wa-float" data-wa target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24"><path d="M4 20l1.3-3.9A8 8 0 1112 20a8 8 0 01-3.9-1L4 20z"/></svg></a>
+
+<!-- cart drawer -->
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="Shopping cart">
+  <div class="d-head"><span>Your cart (<span id="dCount">0</span>)</span><button class="rm" id="closeCart" aria-label="Close cart">×</button></div>
+  <div class="d-body" id="cartBody"></div>
+  <div class="d-foot">
+    <div class="sub"><span>Subtotal</span><span id="subtotal">Rs. 0</span></div>
+    <div class="note">Shipping is calculated at checkout.</div>
+    <button class="btn gold" id="checkoutBtn">Checkout</button>
+  </div>
+</aside>
+
+<!-- checkout -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Checkout">
+  <button class="x" id="closeModal" aria-label="Close">×</button>
+  <div id="checkoutView">
+    <h2>Checkout</h2>
+    <p class="note">Your order will be sent to us on WhatsApp.</p>
+    <form id="form">
+      <div class="f">
+        <input name="name" required placeholder="Full name">
+        <input name="phone" required type="tel" pattern="[0-9+\-\s]{10,15}" placeholder="Phone number (e.g. 0300 1234567)">
+        <input name="email" type="email" placeholder="Email (optional)">
+        <input name="city" required placeholder="City">
+        <textarea name="address" required rows="2" placeholder="Complete delivery address"></textarea>
+        <select name="pay"><option>Cash on delivery</option><option>Bank transfer</option><option>JazzCash / Easypaisa</option></select>
+      </div>
+      <div class="sum" id="summary"></div>
+      <button class="btn wa" style="width:100%;padding:15px">Send order on WhatsApp</button>
+    </form>
+  </div>
+  <div class="ok" id="okView" hidden>
+    <div class="tick">✓</div>
+    <h2>Order sent</h2>
+    <p style="margin:8px 0 18px;font-size:13px;color:var(--muted)">Thank you, <b id="okName"></b>. Please press <b>Send</b> in WhatsApp to confirm your order <b id="okId"></b>. We will call you to confirm delivery.</p>
+    <button class="btn" id="okClose">Continue shopping</button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="products.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

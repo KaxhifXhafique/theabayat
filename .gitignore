@@ -1,0 +1,4 @@
+# original photos (the site uses the renamed copies in images/products/)
+images/*.jpeg
+images/product-1.jpg
+images/product-2.jpg
