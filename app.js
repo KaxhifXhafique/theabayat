@@ -4,7 +4,8 @@ const money = v => 'Rs. ' + v.toLocaleString('en-PK');
 const $ = id => document.getElementById(id);
 const find = id => PRODUCTS.find(p => p.id === id);
 const link = x => 'product.html?id=' + x.id;
-const waLink = text => 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(text);
+const styleLabel = x => x.t==='Open' ? 'Abaya' : x.t + ' abaya';
+const waLink =text => 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(text);
 const heart = '<svg viewBox="0 0 24 24"><path d="M12 21s-8-5-8-11a4.5 4.5 0 018-2.5A4.5 4.5 0 0120 10c0 6-8 11-8 11z"/></svg>';
 const bag = '<svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg>';
 
@@ -14,7 +15,7 @@ function card(x){
       ${x.tag?`<span class="tag">${x.tag}</span>`:''}
       <button class="wish" aria-label="Add to wishlist" data-wish>${heart}</button>
       <button class="add" aria-label="Add ${x.n} to cart" data-add="${x.id}">${bag}</button></div>
-    <a class="info" href="${link(x)}"><div class="cat-l">${x.t==='Open'?'Open front':x.t} abaya</div><div class="name">${x.n}</div>
+    <a class="info" href="${link(x)}"><div class="cat-l">${styleLabel(x)}</div><div class="name">${x.n}</div>
       <div class="price">${x.o?`<s>${money(x.o)}</s>`:''}${money(x.p)}</div></a>
     <a class="buy" href="${link(x)}">View details</a>
   </article>`;
@@ -105,7 +106,7 @@ if($('trendGrid')){
   renderTabs('signature'); renderTrend('all');
 
   $('catRow').innerHTML = PRODUCTS.slice(0,5)
-    .map(x=>`<a class="cat" href="${link(x)}"><img src="${x.img[0]}" alt="${x.n}"><span>${x.n.replace(/ Abaya.*$/,'')}</span></a>`).join('');
+    .map(x=>`<a class="cat" href="${link(x)}"><img src="${x.img[0]}" alt="${x.n}"><span>${x.n.replace(/ \(.*$/,'').replace(/ Abaya$/,'')}</span></a>`).join('');
   $('instaRow').innerHTML = PRODUCTS.map(x=>`<a href="${link(x)}"><img src="${x.img[1]||x.img[0]}" alt="${x.n}" loading="lazy"></a>`).join('');
 
   $('tabs').onclick = e => { const b=e.target.closest('.tab'); if(!b) return;
@@ -128,7 +129,7 @@ if($('pd')){
         <div class="thumbs">${x.img.map((s,i)=>`<button class="${i?'':'on'}" data-img="${s}" aria-label="Photo ${i+1}"><img src="${s}" alt=""></button>`).join('')}</div>
       </div>
       <div class="pinfo">
-        <div class="kicker">${x.t==='Open'?'Open front':x.t} abaya</div>
+        <div class="kicker">${styleLabel(x)}</div>
         <h1>${x.n}</h1>
         <div class="price big">${x.o?`<s>${money(x.o)}</s>`:''}${money(x.p)}</div>
         <p class="desc">${x.d}</p>
