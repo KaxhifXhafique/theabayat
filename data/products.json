@@ -1,0 +1,86 @@
+{
+  "site": {
+    "name": "abayat",
+    "url": "https://theabayat.com/",
+    "whatsapp": "923331234567",
+    "phone": "0333 1234567",
+    "currency": "PKR"
+  },
+  "categories": [
+    {"id": "party", "slug": "party-wear", "name": "Party Wear", "img": "blood-red-1.jpg",
+     "title": "Party Wear Abayas in Pakistan",
+     "intro": "Embellished and beaded party wear abayas for weddings, Eid and evening events. Soft flowing fabrics with pearl, sequin and lace detail, delivered all over Pakistan with cash on delivery."},
+    {"id": "formal", "slug": "formal-wear", "name": "Formal Wear", "img": "black-floral-1.jpg",
+     "title": "Formal Abayas in Pakistan",
+     "intro": "Elegant formal abayas for office, gatherings and special days. Rich colours, lace cuffs and refined embroidery in premium Korean nida and jacquard fabrics."},
+    {"id": "casual", "slug": "casual-wear", "name": "Casual Wear", "img": "purple-bow-1.jpg",
+     "title": "Casual Abayas for Everyday Wear",
+     "intro": "Light, comfortable casual abayas for daily wear, college, shopping and travel. Easy button-down and bow-tie styles in soft breathable fabrics."}
+  ],
+  "products": [
+    {"id": "party-wear-blood-red-abaya", "n": "Party Wear Abaya (Blood Red)", "color": "Blood Red", "cat": "party", "p": 6999, "o": 0, "tag": "Party wear",
+     "d": "A bold blood red kaftan abaya in jacquard satin with a gathered waist and pearl-flower embellishment. Wide batwing sleeves finished with pearl leaf detail.",
+     "f": ["Jacquard satin fabric", "Pearl-flower waist detail", "Wide batwing sleeves with pearl motifs", "Made for weddings, Eid and parties"],
+     "img": ["blood-red-1.jpg", "blood-red-2.jpg"]},
+
+    {"id": "pearl-work-kaftan-abaya", "n": "Pearl Work Kaftan Abaya (Champagne)", "color": "Champagne", "cat": "party", "p": 6999, "o": 0, "tag": "New",
+     "d": "An elegant champagne kaftan abaya in soft satin jacquard with a leaf pattern. A pleated waist with pearl flowers and pearl work on the sleeves gives it a luxurious finish.",
+     "f": ["Satin jacquard with leaf pattern", "Pearl-flower pleated waist", "Pearl work on sleeves", "Relaxed kaftan fit"],
+     "img": ["pearl-kaftan-1.jpg", "pearl-kaftan-2.jpg", "pearl-kaftan-3.jpg"]},
+
+    {"id": "korean-georgette-abaya", "n": "Korean Georgette Abaya (Dusty Rose)", "color": "Dusty Rose", "cat": "party", "p": 6999, "o": 0, "tag": "",
+     "d": "A dusty rose abaya in flowing Korean georgette, decorated with hand-finished black beads, sequins and pearl applique on the sleeves and back.",
+     "f": ["Premium Korean georgette", "Beaded and sequinned applique on sleeves and back", "Light, flowy drape", "Perfect for parties and events"],
+     "img": ["korean-georgette-1.jpg", "korean-georgette-2.jpg", "korean-georgette-3.jpg", "korean-georgette-4.jpg", "korean-georgette-5.jpg", "korean-georgette-6.jpg"]},
+
+    {"id": "plain-korean-nida-dusty-blue", "n": "Plain Korean Nida Abaya (Dusty Blue)", "color": "Dusty Blue", "cat": "party", "p": 6999, "o": 0, "tag": "",
+     "d": "A flowy, soft and lightweight abaya in plain Korean nida, in a calm dusty blue shade. Black beaded applique on the sleeves makes it party-ready.",
+     "f": ["Plain Korean nida", "Flowy, soft and lightweight", "Black beaded sleeve applique", "Party wear"],
+     "img": ["dusty-blue-1.jpg", "dusty-blue-2.jpg", "dusty-blue-3.jpg"]},
+
+    {"id": "aqua-jacquard-open-abaya", "n": "Jacquard Open Abaya With Cream Trim (Aqua)", "color": "Aqua", "cat": "party", "p": 6999, "o": 0, "tag": "New",
+     "d": "A fresh aqua abaya in soft satin jacquard with a tonal leaf pattern, finished with contrast cream satin panels on the front and wide cuffs.",
+     "f": ["Satin jacquard with tonal leaf pattern", "Contrast cream satin front and cuffs", "Wide, relaxed sleeves", "Ideal for Eid, dawats and parties"],
+     "img": ["aqua-jacquard-1.jpg", "aqua-jacquard-2.jpg"]},
+
+    {"id": "coffee-brown-straight-lace-abaya", "n": "Straight Lace Abaya (Coffee Brown)", "color": "Coffee Brown", "cat": "formal", "p": 6999, "o": 0, "tag": "New",
+     "d": "A rich coffee brown abaya in soft jacquard fabric with a subtle tonal pattern. Finished with delicate embroidered lace on the sleeves for a graceful, feminine touch.",
+     "f": ["Soft jacquard fabric with tonal print", "Embroidered lace finish on sleeves", "Flowy, comfortable fall", "Suitable for daily and occasion wear"],
+     "img": ["coffee-brown-1.jpg", "coffee-brown-2.jpg", "coffee-brown-3.jpg", "coffee-brown-4.jpg", "coffee-brown-5.jpg"]},
+
+    {"id": "imported-textured-korean-nida", "n": "Imported Textured Korean Nida Navy Blue Abaya (Deep Navy Blue)", "color": "Deep Navy Blue", "cat": "formal", "p": 6999, "o": 0, "tag": "New",
+     "d": "A deep navy blue abaya in imported textured Korean nida. The fabric has a soft sheen and a woven floral texture, with fine cut-work lace on the cuffs.",
+     "f": ["Imported textured Korean nida", "Cut-work lace cuffs", "Deep navy blue abaya", "Soft, breathable and easy to carry"],
+     "img": ["textured-nida-1.jpg", "textured-nida-2.jpg", "textured-nida-3.jpg"]},
+
+    {"id": "black-floral-embroidered-abaya", "n": "Floral Embroidered Cuff Abaya (Black)", "color": "Black", "cat": "formal", "p": 6999, "o": 0, "tag": "New",
+     "d": "A classic black abaya with a buttoned neckline and wide cuffs embroidered with pastel thread flowers and pearl centres. Simple, graceful and easy to style.",
+     "f": ["Soft, opaque black fabric", "Pastel floral embroidery with pearl centres on cuffs", "Button detail at the neckline", "Classic straight cut"],
+     "img": ["black-floral-1.jpg", "black-floral-2.jpg", "black-floral-3.jpg"]},
+
+    {"id": "navy-bow-tie-abaya", "n": "Bow Tie Neck Abaya (Navy Blue)", "color": "Navy Blue", "cat": "formal", "p": 6999, "o": 0, "tag": "New",
+     "d": "A smart navy blue abaya with a soft bow tie at the neckline and tie-up cuffs. Clean lines and a gentle fall make it perfect for office and formal days.",
+     "f": ["Soft flowing fabric", "Bow tie neckline", "Tie-up sleeve cuffs", "Straight, modest silhouette"],
+     "img": ["navy-bow-1.jpg", "navy-bow-2.jpg"]},
+
+    {"id": "blue-checked-button-down-abaya", "n": "Checked Button-Down Abaya (Denim Blue)", "color": "Denim Blue", "cat": "casual", "p": 6999, "o": 0, "tag": "New",
+     "d": "An everyday denim blue abaya in a textured check weave, with a full button-down front and black contrast trim on the placket and cuffs.",
+     "f": ["Textured check fabric", "Full button-down front", "Black contrast trim on placket and cuffs", "Easy everyday fit"],
+     "img": ["blue-check-1.jpg", "blue-check-2.jpg"]},
+
+    {"id": "pink-striped-button-down-abaya", "n": "Striped Button-Down Abaya (Dusty Pink)", "color": "Dusty Pink", "cat": "casual", "p": 6999, "o": 0, "tag": "New",
+     "d": "A soft dusty pink abaya with fine tonal stripes, a snap-button front and black piping. Light and comfortable for college, work and outings.",
+     "f": ["Soft striped fabric", "Snap-button front", "Black piping on placket and cuffs", "Light and breathable"],
+     "img": ["pink-stripe-1.jpg", "pink-stripe-2.jpg"]},
+
+    {"id": "maroon-bow-tie-abaya", "n": "Bow Tie Neck Abaya (Maroon)", "color": "Maroon", "cat": "casual", "p": 6999, "o": 0, "tag": "",
+     "d": "A rich maroon abaya with a bow tie neckline and tie-up cuffs. A relaxed, comfortable fit for everyday wear with a polished look.",
+     "f": ["Soft flowing fabric", "Bow tie neckline", "Tie-up sleeve cuffs", "Comfortable everyday fit"],
+     "img": ["maroon-bow-1.jpg", "maroon-bow-2.jpg"]},
+
+    {"id": "purple-bow-tie-abaya", "n": "Bow Tie Neck Abaya (Plum Purple)", "color": "Plum Purple", "cat": "casual", "p": 6999, "o": 0, "tag": "New",
+     "d": "A plum purple abaya with a bow tie neckline and gathered tie-up cuffs. Soft, light and easy to wear all day.",
+     "f": ["Soft flowing fabric", "Bow tie neckline", "Gathered tie-up cuffs", "Relaxed everyday fit"],
+     "img": ["purple-bow-1.jpg", "purple-bow-2.jpg"]}
+  ]
+}

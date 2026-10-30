@@ -1,33 +1,26 @@
-/* abayat – shared shop logic (home page + product page) */
+/* abayat – shared shop logic. Pages are built by build.pl; this file adds the cart, filters and WhatsApp ordering. */
+const BASE = document.documentElement.dataset.base || '';
 const SIZES = ['50','52','54','56','58','60'];
 const money = v => 'Rs. ' + v.toLocaleString('en-PK');
 const $ = id => document.getElementById(id);
 const find = id => PRODUCTS.find(p => p.id === id);
-const link = x => 'product.html?id=' + x.id;
-const styleLabel = x => x.t==='Open' ? 'Abaya' : x.t + ' abaya';
-const waLink =text => 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(text);
-const heart = '<svg viewBox="0 0 24 24"><path d="M12 21s-8-5-8-11a4.5 4.5 0 018-2.5A4.5 4.5 0 0120 10c0 6-8 11-8 11z"/></svg>';
-const bag = '<svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg>';
-
-function card(x){
-  return `<article class="card">
-    <div class="ph"><a href="${link(x)}"><img src="${x.img[0]}" alt="${x.n}" loading="lazy"></a>
-      ${x.tag?`<span class="tag">${x.tag}</span>`:''}
-      <button class="wish" aria-label="Add to wishlist" data-wish>${heart}</button>
-      <button class="add" aria-label="Add ${x.n} to cart" data-add="${x.id}">${bag}</button></div>
-    <a class="info" href="${link(x)}"><div class="cat-l">${styleLabel(x)}</div><div class="name">${x.n}</div>
-      <div class="price">${x.o?`<s>${money(x.o)}</s>`:''}${money(x.p)}</div></a>
-    <a class="buy" href="${link(x)}">View details</a>
-  </article>`;
-}
+const waLink = text => 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(text);
 
 function toast(msg){ const t=$('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(toast.t); toast.t=setTimeout(()=>t.classList.remove('show'),2200); }
 
+/* ---------- menu + categories dropdown ---------- */
 $('burger').onclick = () => $('nav').classList.toggle('open');
+document.querySelectorAll('.dd-btn').forEach(b => b.onclick = e => {
+  e.stopPropagation();
+  const dd = b.parentElement, open = !dd.classList.contains('open');
+  dd.classList.toggle('open', open); b.setAttribute('aria-expanded', open);
+});
+document.addEventListener('click', () => document.querySelectorAll('.dd.open').forEach(d => { d.classList.remove('open'); d.querySelector('.dd-btn').setAttribute('aria-expanded', false); }));
 
 /* ---------- cart ---------- */
 let cart = [];
 try { cart = (JSON.parse(localStorage.getItem('abayat_cart2')) || []).filter(i => find(i.id)); } catch(e){ cart = []; }
+cart.forEach(i => { const x = find(i.id); i.n = x.n; i.p = x.p; i.img = x.img[0]; });
 const save = () => { try { localStorage.setItem('abayat_cart2', JSON.stringify(cart)); } catch(e){} };
 const total = () => cart.reduce((s,i)=>s+i.p*i.q,0);
 const qtyAll = () => cart.reduce((s,i)=>s+i.q,0);
@@ -38,7 +31,7 @@ function renderCart(){
   $('subtotal').textContent = money(total());
   $('checkoutBtn').disabled = !cart.length;
   $('cartBody').innerHTML = cart.length ? cart.map(i=>`
-    <div class="item"><img src="${i.img}" alt="">
+    <div class="item"><img src="${BASE + i.img}" alt="">
       <div><div class="n">${i.n}</div><div class="sz">Size ${i.s}</div><div class="p">${money(i.p)}</div>
         <div class="qty"><button data-dec="${keyOf(i)}" aria-label="Decrease">−</button><span>${i.q}</span><button data-inc="${keyOf(i)}" aria-label="Increase">+</button></div></div>
       <button class="rm" data-del="${keyOf(i)}" aria-label="Remove">×</button></div>`).join('')
@@ -99,63 +92,35 @@ $('okClose').onclick = closeAll;
 /* WhatsApp links in the page */
 document.querySelectorAll('[data-wa]').forEach(a => a.href = waLink('Assalam o Alaikum, I want to ask about your abayas.'));
 
-/* ---------- home page ---------- */
-if($('trendGrid')){
-  const renderTabs = g => $('tabGrid').innerHTML = PRODUCTS.filter(x=>x.g.includes(g)).slice(0,3).map(card).join('');
-  const renderTrend = f => $('trendGrid').innerHTML = PRODUCTS.filter(x=>f==='all'||x.t===f).map(card).join('') || '<p class="empty">No abayas in this style yet.</p>';
-  renderTabs('signature'); renderTrend('all');
-
-  $('catRow').innerHTML = PRODUCTS.slice(0,5)
-    .map(x=>`<a class="cat" href="${link(x)}"><img src="${x.img[0]}" alt="${x.n}"><span>${x.n.replace(/ \(.*$/,'').replace(/ Abaya$/,'')}</span></a>`).join('');
-  $('instaRow').innerHTML = PRODUCTS.map(x=>`<a href="${link(x)}"><img src="${x.img[1]||x.img[0]}" alt="${x.n}" loading="lazy"></a>`).join('');
-
+/* ---------- home page: category tabs and filters ---------- */
+function filterCards(grid, cat, limit){
+  let shown = 0;
+  grid.querySelectorAll('.card').forEach(c => {
+    const ok = (cat==='all' || c.dataset.cat===cat) && (!limit || shown < limit);
+    c.hidden = !ok; if(ok) shown++;
+  });
+}
+if($('tabGrid')){
+  filterCards($('tabGrid'), $('tabs').querySelector('.on').dataset.t, 3);
   $('tabs').onclick = e => { const b=e.target.closest('.tab'); if(!b) return;
-    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on')); b.classList.add('on'); renderTabs(b.dataset.t); };
+    $('tabs').querySelectorAll('.tab').forEach(t=>t.classList.toggle('on', t===b)); filterCards($('tabGrid'), b.dataset.t, 3); };
   $('pills').onclick = e => { const b=e.target.closest('.pill'); if(!b) return;
-    document.querySelectorAll('.pill').forEach(t=>t.classList.remove('on')); b.classList.add('on'); renderTrend(b.dataset.f); };
+    $('pills').querySelectorAll('.pill').forEach(t=>t.classList.toggle('on', t===b)); filterCards($('trendGrid'), b.dataset.f); };
 }
 
 /* ---------- product page ---------- */
 if($('pd')){
-  const x = find(new URLSearchParams(location.search).get('id'));
-  if(!x){
-    $('pd').innerHTML = '<p class="empty">This abaya could not be found. <a href="index.html#trending" style="text-decoration:underline">See all abayas</a></p>';
-  } else {
-    document.title = x.n + ' | abayat';
-    $('crumb').textContent = x.n;
-    $('pd').innerHTML = `
-      <div class="gallery">
-        <div class="main"><img id="mainImg" src="${x.img[0]}" alt="${x.n}"></div>
-        <div class="thumbs">${x.img.map((s,i)=>`<button class="${i?'':'on'}" data-img="${s}" aria-label="Photo ${i+1}"><img src="${s}" alt=""></button>`).join('')}</div>
-      </div>
-      <div class="pinfo">
-        <div class="kicker">${styleLabel(x)}</div>
-        <h1>${x.n}</h1>
-        <div class="price big">${x.o?`<s>${money(x.o)}</s>`:''}${money(x.p)}</div>
-        <p class="desc">${x.d}</p>
-        <div class="lbl">Size (length in inches)</div>
-        <div class="sizes" id="sizes">${SIZES.map((s,i)=>`<button class="${i===2?'on':''}" data-s="${s}">${s}</button>`).join('')}</div>
-        <div class="lbl">Quantity</div>
-        <div class="qty big"><button id="qm" aria-label="Decrease">−</button><span id="qv">1</span><button id="qp" aria-label="Increase">+</button></div>
-        <div class="actions">
-          <a class="btn wa" id="waBuy" target="_blank" rel="noopener">Order on WhatsApp</a>
-          <button class="btn" id="addBtn">Add to cart</button>
-        </div>
-        <ul class="feats">${x.f.map(l=>`<li>${l}</li>`).join('')}</ul>
-        <div class="perks"><span>Cash on delivery</span><span>Delivery all over Pakistan</span><span>Easy returns</span></div>
-      </div>`;
-    let size = SIZES[2], qty = 1;
-    const updWa = () => $('waBuy').href = waLink(`Assalam o Alaikum, I want to order:\n${x.n}\nSize: ${size}\nQuantity: ${qty}\nPrice: ${money(x.p*qty)}\n${location.href}`);
-    updWa();
-    $('pd').querySelector('.thumbs').onclick = e => { const b=e.target.closest('[data-img]'); if(!b) return;
-      $('mainImg').src = b.dataset.img; $('pd').querySelectorAll('.thumbs button').forEach(t=>t.classList.toggle('on', t===b)); };
-    $('sizes').onclick = e => { const b=e.target.closest('[data-s]'); if(!b) return;
-      size = b.dataset.s; $('sizes').querySelectorAll('button').forEach(t=>t.classList.toggle('on', t===b)); updWa(); };
-    $('qm').onclick = () => { qty = Math.max(1, qty-1); $('qv').textContent = qty; updWa(); };
-    $('qp').onclick = () => { qty++; $('qv').textContent = qty; updWa(); };
-    $('addBtn').onclick = () => addToCart(x.id, size, qty);
-    $('related').innerHTML = PRODUCTS.filter(p=>p.id!==x.id).slice(0,4).map(card).join('');
-  }
+  const x = find($('pd').dataset.id);
+  let size = '54', qty = 1;
+  const updWa = () => $('waBuy').href = waLink(`Assalam o Alaikum, I want to order:\n${x.n}\nSize: ${size}\nQuantity: ${qty}\nPrice: ${money(x.p*qty)}\n${location.href}`);
+  updWa();
+  $('pd').querySelector('.thumbs').onclick = e => { const b=e.target.closest('[data-img]'); if(!b) return;
+    $('mainImg').src = b.dataset.img; $('pd').querySelectorAll('.thumbs button').forEach(t=>t.classList.toggle('on', t===b)); };
+  $('sizes').onclick = e => { const b=e.target.closest('[data-s]'); if(!b) return;
+    size = b.dataset.s; $('sizes').querySelectorAll('button').forEach(t=>t.classList.toggle('on', t===b)); updWa(); };
+  $('qm').onclick = () => { qty = Math.max(1, qty-1); $('qv').textContent = qty; updWa(); };
+  $('qp').onclick = () => { qty++; $('qv').textContent = qty; updWa(); };
+  $('addBtn').onclick = () => addToCart(x.id, size, qty);
 }
 
 renderCart();
