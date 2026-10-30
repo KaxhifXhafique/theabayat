@@ -8,6 +8,7 @@ use strict;
 use warnings;
 use JSON::PP;
 use File::Path qw(make_path);
+use Digest::MD5 qw(md5_hex);
 
 my $json = JSON::PP->new->utf8->canonical;
 open my $in, '<:raw', 'data/products.json' or die "data/products.json: $!";
@@ -28,6 +29,9 @@ for my $p (@prods) {
 # ---------- helpers ----------
 sub esc { my $s = shift // ''; $s =~ s/&/&amp;/g; $s =~ s/</&lt;/g; $s =~ s/>/&gt;/g; $s =~ s/"/&quot;/g; $s }
 sub money { my $n = reverse shift; $n =~ s/(\d{3})(?=\d)/$1,/g; 'Rs. ' . reverse $n }
+# short content hash so browsers and the Hostinger cache load new CSS/JS after every update
+my %ver;
+sub ver { my $f = shift; $ver{$f} //= do { open my $h, "<:raw", $f or die "$f: $!"; substr md5_hex(do { local $/; <$h> }), 0, 8 } }
 sub img { 'images/products/' . shift }
 sub plink { "abayas/$_[0]{id}/" }
 sub clink { "$_[0]{slug}/" }
@@ -109,7 +113,7 @@ sub head {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght\@400;500;600&display=swap">
-<link rel="stylesheet" href="${r}style.css">
+<link rel="stylesheet" href="${r}style.css?v=@{[ ver(q(style.css)) ]}">
 $ld
 </head>
 <body>
@@ -201,8 +205,8 @@ sub foot {
 </div>
 <div class="toast" id="toast"></div>
 
-<script src="${r}products.js"></script>
-<script src="${r}app.js"></script>
+<script src="${r}products.js?v=@{[ ver(q(products.js)) ]}"></script>
+<script src="${r}app.js?v=@{[ ver(q(app.js)) ]}"></script>
 </body>
 </html>
 HTML
