@@ -112,7 +112,7 @@ sub head {
 <link rel="icon" type="image/png" href="${r}images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght\@500;600;700&family=Mulish:wght\@400;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght\@500&family=Roboto:wght\@400;500;700&display=swap">
 <link rel="stylesheet" href="${r}style.css?v=@{[ ver(q(style.css)) ]}">
 $ld
 </head>
