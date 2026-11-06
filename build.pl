@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# abayat site builder.
+# Abayat site builder.
 # Reads data/products.json and writes every page as plain HTML (good for SEO):
 #   index.html, party-wear/, formal-wear/, casual-wear/, abayas/<id>/,
 #   products.js (for the cart), sitemap.xml, robots.txt
@@ -84,7 +84,7 @@ sub head {
   my $canon  = $URL . ($o{path} // '');
   my $t      = esc($o{title});
   my $d      = esc($o{desc});
-  my $ogimg  = $URL . ($o{image} // 'images/cover.jpg');
+  my $ogimg  = $URL . ($o{image} // 'images/brand-tag.jpg');
   my $type   = $o{ogtype} // 'website';
   my $ld     = join "\n", map { jsonld($_) } @{ $o{ld} // [] };
   return <<"HTML";
@@ -97,8 +97,8 @@ sub head {
 <meta name="description" content="$d">
 <link rel="canonical" href="$canon">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<meta name="theme-color" content="#1c1b1a">
-<meta property="og:site_name" content="abayat">
+<meta name="theme-color" content="#a8b69b">
+<meta property="og:site_name" content="Abayat">
 <meta property="og:type" content="$type">
 <meta property="og:title" content="$t">
 <meta property="og:description" content="$d">
@@ -109,21 +109,21 @@ sub head {
 <meta name="twitter:title" content="$t">
 <meta name="twitter:description" content="$d">
 <meta name="twitter:image" content="$ogimg">
-<link rel="icon" type="image/png" href="${r}images/logo.png">
+<link rel="icon" type="image/png" href="${r}images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght\@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght\@500;600;700&family=Mulish:wght\@400;700;800&display=swap">
 <link rel="stylesheet" href="${r}style.css?v=@{[ ver(q(style.css)) ]}">
 $ld
 </head>
 <body>
 
-<div class="topbar">Premium abayas up to <b>40% off</b> &middot; Free delivery on orders above Rs. 15,000 &middot; Cash on delivery all over Pakistan</div>
+<div class="topbar">Free delivery on orders above Rs. 15,000 &middot; Cash on delivery all over Pakistan</div>
 
 <header>
   <div class="wrap head">
     <button class="ib burger" aria-label="Menu" aria-controls="nav" id="burger"><svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
-    <a class="logo" href="${r}"><img src="${r}images/logo.png" alt="abayat - modest wear, elegant you" width="370" height="170"></a>
+    <a class="logo" href="${r}" aria-label="Abayat - The Modest Edit"><span class="l1">Abayat</span><span class="l2">The Modest Edit</span></a>
     <nav class="nav" id="nav" aria-label="Main">
       <a href="${r}">Home</a>
       <div class="dd">
@@ -150,6 +150,7 @@ sub foot {
   return <<"HTML";
 <footer id="contact">
   <div class="wrap">
+    <div class="fbrand"><b>Abayat</b><span>The Modest Edit</span></div>
     <div class="fgrid">
       <div><h4>Order with us</h4><ul><li>WhatsApp: <a data-wa target="_blank" rel="noopener">$site{phone}</a></li><li>Cash on delivery</li><li>Delivery all over Pakistan</li></ul></div>
       <div><h4>Shop</h4><ul>$catlinks<li><a href="${r}#all">All abayas</a></li></ul></div>
@@ -161,7 +162,7 @@ sub foot {
         </form>
       </div>
     </div>
-    <div class="copy"><span>&copy; 2026 abayat. All rights reserved.</span><span>Premium abayas online in Pakistan</span></div>
+    <div class="copy"><span>&copy; 2026 Abayat. All rights reserved.</span><span>Premium abayas online in Pakistan</span></div>
   </div>
 </footer>
 
@@ -174,7 +175,7 @@ sub foot {
   <div class="d-foot">
     <div class="sub"><span>Subtotal</span><span id="subtotal">Rs. 0</span></div>
     <div class="note">Shipping is calculated at checkout.</div>
-    <button class="btn gold" id="checkoutBtn">Checkout</button>
+    <button class="btn" id="checkoutBtn">Checkout</button>
   </div>
 </aside>
 
@@ -240,92 +241,69 @@ sub cat_tiles {
 # ---------- home page ----------
 {
   my $r = '';
-  my $cards = join '', map { card($_, $r) } @prods;
-  my $tabs  = join '', map { qq{<button class="tab@{[ $_ == $cats[0] ? ' on' : '' ]}" data-t="$_->{id}">$_->{name}</button>} } @cats;
-  my $pills = join '', map { qq{<button class="pill" data-f="$_->{id}">$_->{name}</button>} } @cats;
-  my $insta = join '', map { qq{<a href="} . plink($_) . qq{"><img src="} . img($_->{img}[1] // $_->{img}[0]) . qq{" alt="} . esc($_->{n}) . qq{" loading="lazy" width="300" height="300"></a>} } @prods[0 .. 5];
-  my $feat  = (grep { $_->{id} eq 'pearl-work-kaftan-abaya' } @prods)[0] // $prods[0];
-  (my $featname = $feat->{n}) =~ s{ \(.*}{};
+  my $hero = (grep { $_->{id} eq 'pearl-work-kaftan-abaya' } @prods)[0] // $prods[0];
+  my $sections = join '', map {
+    my $c = $_;
+    my @list = grep { $_->{cat} eq $c->{id} } @prods;
+    my $cta = @list % 5
+      ? qq{<a class="cta-tile" href="} . clink($c) . qq{"><b>$c->{name}</b><span>View all &rarr;</span></a>} : '';
+    qq{<section class="sec cat-sec" id="$c->{slug}">
+  <div class="wrap">
+    <div class="sec-head"><h2 class="title">$c->{name}</h2><a class="more" href="} . clink($c) . qq{">View all @{[ scalar @list ]} styles &rarr;</a></div>
+    <div class="grid5">} . join('', map { card($_, $r) } @list) . qq{$cta</div>
+  </div>
+</section>
+}
+  } @cats;
 
   my $ld = [
-    { '@context' => 'https://schema.org', '@type' => 'ClothingStore', name => 'abayat', url => $URL,
-      logo => $URL . 'images/logo.png', image => $URL . 'images/cover.jpg', telephone => '+' . $site{whatsapp},
+    { '@context' => 'https://schema.org', '@type' => 'ClothingStore', name => 'Abayat', slogan => 'The Modest Edit', url => $URL,
+      logo => $URL . 'images/brand-tag.jpg', image => $URL . 'images/brand-tag.jpg', telephone => '+' . $site{whatsapp},
       priceRange => 'Rs. 6,999', areaServed => 'PK', address => { '@type' => 'PostalAddress', addressCountry => 'PK' },
       description => 'Premium abayas online in Pakistan - party wear, formal and casual abayas with cash on delivery.' },
-    { '@context' => 'https://schema.org', '@type' => 'WebSite', name => 'abayat', url => $URL },
+    { '@context' => 'https://schema.org', '@type' => 'WebSite', name => 'Abayat', url => $URL },
   ];
 
   write_page('index.html', head(r => $r, path => '', ld => $ld,
-      title => 'abayat | Premium Abayas Online in Pakistan - Party, Formal & Casual',
+      title => 'Abayat | The Modest Edit - Premium Abayas Online in Pakistan',
       desc  => 'Shop premium abayas online in Pakistan. Party wear, formal and casual abayas in Korean nida, georgette and jacquard. Rs. 6,999 with cash on delivery nationwide.')
     . <<"HTML" . foot($r));
 
 <main>
-<a class="hero" href="#categories" id="top"><img src="images/cover.jpg" alt="Premium abayas up to 40% off - style, comfort, modesty" width="1983" height="793"></a>
+<section class="hero" id="top">
+  <div class="hero-text">
+    <div class="hero-brand">Abayat</div>
+    <div class="hero-tag">The Modest Edit</div>
+    <h1>Premium Abayas Online in Pakistan</h1>
+    <p>Party wear, formal and casual abayas in soft, flowing fabrics. Order on WhatsApp with cash on delivery.</p>
+    <a class="btn" href="#all">Shop the collection</a>
+    <img class="flower" src="images/flower.jpg" alt="" width="620" height="425">
+  </div>
+  <div class="hero-img"><img src="@{[ img($hero->{img}[1]) ]}" alt="@{[ esc($hero->{n}) ]}" width="1208" height="1601"></div>
+</section>
 
 <section class="sec" id="categories">
   <div class="wrap">
     <div class="center-head">
       <div class="kicker">Shop by category</div>
-      <h1 class="title">Premium Abayas Online in Pakistan</h1>
-      <p>Party wear, formal and casual abayas in soft, flowing fabrics. Order on WhatsApp with cash on delivery.</p>
+      <h2 class="title">Find your edit</h2>
     </div>
     <div class="ctiles">@{[ cat_tiles($r) ]}</div>
   </div>
 </section>
 
-<section class="sec" id="signature" style="padding-top:0">
-  <div class="wrap split">
-    <a class="split-img" href="@{[ plink($feat) ]}">
-      <img src="@{[ img($feat->{img}[0]) ]}" alt="@{[ esc($feat->{n}) ]}" loading="lazy" width="600" height="800">
-      <div class="cap"><small>Abaya collection 2026</small><h2>@{[ esc($featname) ]}</h2></div>
-    </a>
+<div id="all">
+$sections</div>
+
+<section class="sec about">
+  <div class="wrap about-in">
+    <img src="images/brand-tag.jpg" alt="Abayat - The Modest Edit brand tag" loading="lazy" width="1280" height="1280">
     <div>
-      <div class="tabs" id="tabs">$tabs</div>
-      <div class="grid3" id="tabGrid">$cards</div>
+      <div class="kicker">About Abayat</div>
+      <h2 class="title">Buy abayas online in Pakistan</h2>
+      <p>Abayat brings you premium abayas for every part of your day. Our <a href="party-wear/">party wear abayas</a> feature pearl work, beads and lace for weddings and Eid. Our <a href="formal-wear/">formal abayas</a> come in rich colours like navy blue, coffee brown and black, while our <a href="casual-wear/">casual abayas</a> are light, breathable and easy to wear daily.</p>
+      <p>Every abaya is Rs. 6,999, available in sizes 50 to 60, and delivered all over Pakistan with cash on delivery. Order in a minute on WhatsApp.</p>
     </div>
-  </div>
-</section>
-
-<section class="sec" id="all" style="padding-top:0">
-  <div class="wrap">
-    <div class="trend-head">
-      <div><div class="kicker">Our collection</div><h2 class="title">All abayas</h2></div>
-      <div class="pills" id="pills"><button class="pill on" data-f="all">All abayas</button>$pills</div>
-    </div>
-    <div class="grid6" id="trendGrid">$cards</div>
-  </div>
-</section>
-
-<section class="sec" id="edit" style="background:var(--soft)">
-  <div class="wrap">
-    <div class="edit-head">
-      <div class="kicker">abayat edit</div>
-      <h2 class="title">The abaya edit</h2>
-      <p>Soft fabrics, quiet detail and a fit made for every day, prayer and occasion.</p>
-    </div>
-    <div class="mosaic">
-@{[ join "\n", map { my ($c, $h, $btn) = @$_; qq{      <a class="tile" href="} . clink($c) . qq{"><img src="} . img($c->{img}) . qq{" alt="$c->{name} abayas" loading="lazy"><div><small>$c->{name}</small><h3>$h</h3>$btn</div></a>} }
-      ([ $cats[0], 'Beads, pearls and lace for weddings, Eid and parties.', '<span class="btn">Explore</span>' ],
-       [ $cats[1], 'Refined abayas for office and special days', '' ],
-       [ $cats[2], 'Light and easy for every day', '' ]) ]}
-    </div>
-  </div>
-</section>
-
-<section class="sec seo-text">
-  <div class="wrap">
-    <h2 class="title">Buy abayas online in Pakistan</h2>
-    <p>abayat brings you premium abayas for every part of your day. Our <a href="party-wear/">party wear abayas</a> feature pearl work, beads and lace for weddings and Eid. Our <a href="formal-wear/">formal abayas</a> come in rich colours like navy blue, coffee brown and black, while our <a href="casual-wear/">casual abayas</a> are light, breathable and easy to wear daily. Every abaya is Rs. 6,999, available in sizes 50 to 60, and delivered all over Pakistan with cash on delivery. Order in a minute on WhatsApp.</p>
-  </div>
-</section>
-
-<section class="sec insta">
-  <div class="wrap">
-    <h2 class="title" style="text-transform:none;font-size:24px">Follow us on Instagram</h2>
-    <p>Join our community for daily inspiration and a closer look at our abayas.</p>
-    <div class="insta-row">$insta</div>
-    <a class="btn" href="#" onclick="toast('Add your Instagram link here');return false">Visit Instagram</a>
   </div>
 </section>
 </main>
@@ -346,7 +324,7 @@ for my $c (@cats) {
       mainEntity => { '@type' => 'ItemList', itemListElement => [ map { { '@type' => 'ListItem', position => ++$i, url => $URL . plink($_), name => $_->{n} } } @list ] } },
   ];
   write_page(clink($c) . 'index.html', head(r => $r, path => clink($c), ld => $ld, image => img($c->{img}),
-      title => "$c->{title} | abayat",
+      title => "$c->{title} | Abayat",
       desc  => short($c->{intro}, 150))
     . <<"HTML" . foot($r));
 
@@ -385,13 +363,13 @@ for my $p (@prods) {
     crumbs_ld([ 'Home', '' ], [ $c->{name}, clink($c) ], [ $p->{n}, plink($p) ]),
     { '@context' => 'https://schema.org', '@type' => 'Product', name => $p->{n}, sku => $p->{id},
       image => [ map { $URL . img($_) } @{ $p->{img} } ], description => $p->{d}, color => $p->{color},
-      category => "Women's Clothing > Abayas > $c->{name}", brand => { '@type' => 'Brand', name => 'abayat' },
+      category => "Women's Clothing > Abayas > $c->{name}", brand => { '@type' => 'Brand', name => 'Abayat' },
       offers => { '@type' => 'Offer', url => $URL . plink($p), priceCurrency => $site{currency}, price => $p->{p},
         availability => 'https://schema.org/InStock', itemCondition => 'https://schema.org/NewCondition',
-        seller => { '@type' => 'Organization', name => 'abayat' } } },
+        seller => { '@type' => 'Organization', name => 'Abayat' } } },
   ];
   write_page(plink($p) . 'index.html', head(r => $r, path => plink($p), ld => $ld, image => img($p->{img}[0]), ogtype => 'product',
-      title => "$p->{n} - $c->{name} Abaya | abayat",
+      title => "$p->{n} - $c->{name} Abaya | Abayat",
       desc  => short($p->{d}, 110) . ' ' . money($p->{p}) . ', cash on delivery in Pakistan.')
     . <<"HTML" . foot($r));
 

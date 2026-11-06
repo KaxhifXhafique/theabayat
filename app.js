@@ -76,7 +76,7 @@ $('form').onsubmit = e => {
   e.preventDefault();
   const d = Object.fromEntries(new FormData(e.target));
   const id = '#AB' + Math.floor(100000 + Math.random()*900000);
-  const msg = [`New order ${id} – abayat`, '',
+  const msg = [`New order ${id} – Abayat`, '',
     ...cart.map(i=>`• ${i.n} – size ${i.s} × ${i.q} = ${money(i.p*i.q)}`),
     `Shipping: ${shipping()?money(shipping()):'Free'}`,
     `Total: ${money(total()+shipping())}`, '',
@@ -91,22 +91,6 @@ $('okClose').onclick = closeAll;
 
 /* WhatsApp links in the page */
 document.querySelectorAll('[data-wa]').forEach(a => a.href = waLink('Assalam o Alaikum, I want to ask about your abayas.'));
-
-/* ---------- home page: category tabs and filters ---------- */
-function filterCards(grid, cat, limit){
-  let shown = 0;
-  grid.querySelectorAll('.card').forEach(c => {
-    const ok = (cat==='all' || c.dataset.cat===cat) && (!limit || shown < limit);
-    c.hidden = !ok; if(ok) shown++;
-  });
-}
-if($('tabGrid')){
-  filterCards($('tabGrid'), $('tabs').querySelector('.on').dataset.t, 3);
-  $('tabs').onclick = e => { const b=e.target.closest('.tab'); if(!b) return;
-    $('tabs').querySelectorAll('.tab').forEach(t=>t.classList.toggle('on', t===b)); filterCards($('tabGrid'), b.dataset.t, 3); };
-  $('pills').onclick = e => { const b=e.target.closest('.pill'); if(!b) return;
-    $('pills').querySelectorAll('.pill').forEach(t=>t.classList.toggle('on', t===b)); filterCards($('trendGrid'), b.dataset.f); };
-}
 
 /* ---------- product page ---------- */
 if($('pd')){
