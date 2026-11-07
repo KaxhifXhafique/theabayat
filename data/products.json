@@ -13,9 +13,12 @@
     {"id": "formal", "slug": "formal-wear", "name": "Formal Wear", "img": "black-floral-1.jpg",
      "title": "Formal Abayas in Pakistan",
      "intro": "Elegant formal abayas for office, gatherings and special days. Rich colours, lace cuffs and refined embroidery in premium Korean nida and jacquard fabrics."},
-    {"id": "casual", "slug": "casual-wear", "name": "Casual Wear", "img": "purple-bow-1.jpg",
+    {"id": "casual", "slug": "casual-wear", "name": "Casual Wear", "img": "pink-stripe-1.jpg",
      "title": "Casual Abayas for Everyday Wear",
-     "intro": "Light, comfortable casual abayas for daily wear, college, shopping and travel. Easy button-down and bow-tie styles in soft breathable fabrics."}
+     "intro": "Light, comfortable casual abayas for daily wear, college, shopping and travel. Easy button-down styles in soft breathable fabrics."},
+    {"id": "simple", "slug": "simple-abaya", "name": "Simple Abaya", "img": "maroon-bow-1.jpg",
+     "title": "Simple Abayas in Pakistan",
+     "intro": "Plain, simple abayas in solid colours with clean lines and a modest fall. Easy to style for daily wear, work and prayer, delivered all over Pakistan with cash on delivery."}
   ],
   "products": [
     {"id": "party-wear-blood-red-abaya", "n": "Party Wear Abaya (Blood Red)", "color": "Blood Red", "cat": "party", "p": 6999, "o": 0, "tag": "Party wear",
@@ -58,7 +61,7 @@
      "f": ["Soft, opaque black fabric", "Pastel floral embroidery with pearl centres on cuffs", "Button detail at the neckline", "Classic straight cut"],
      "img": ["black-floral-1.jpg", "black-floral-2.jpg", "black-floral-3.jpg"]},
 
-    {"id": "navy-bow-tie-abaya", "n": "Bow Tie Neck Abaya (Navy Blue)", "color": "Navy Blue", "cat": "formal", "p": 6999, "o": 0, "tag": "New",
+    {"id": "navy-bow-tie-abaya", "n": "Bow Tie Neck Abaya (Navy Blue)", "color": "Navy Blue", "cat": "simple", "p": 6999, "o": 0, "tag": "New",
      "d": "A smart navy blue abaya with a soft bow tie at the neckline and tie-up cuffs. Clean lines and a gentle fall make it perfect for office and formal days.",
      "f": ["Soft flowing fabric", "Bow tie neckline", "Tie-up sleeve cuffs", "Straight, modest silhouette"],
      "img": ["navy-bow-1.jpg", "navy-bow-2.jpg"]},
@@ -73,12 +76,12 @@
      "f": ["Soft striped fabric", "Snap-button front", "Black piping on placket and cuffs", "Light and breathable"],
      "img": ["pink-stripe-1.jpg", "pink-stripe-2.jpg"]},
 
-    {"id": "maroon-bow-tie-abaya", "n": "Bow Tie Neck Abaya (Maroon)", "color": "Maroon", "cat": "casual", "p": 6999, "o": 0, "tag": "",
+    {"id": "maroon-bow-tie-abaya", "n": "Bow Tie Neck Abaya (Maroon)", "color": "Maroon", "cat": "simple", "p": 6999, "o": 0, "tag": "",
      "d": "A rich maroon abaya with a bow tie neckline and tie-up cuffs. A relaxed, comfortable fit for everyday wear with a polished look.",
      "f": ["Soft flowing fabric", "Bow tie neckline", "Tie-up sleeve cuffs", "Comfortable everyday fit"],
      "img": ["maroon-bow-1.jpg", "maroon-bow-2.jpg"]},
 
-    {"id": "purple-bow-tie-abaya", "n": "Bow Tie Neck Abaya (Plum Purple)", "color": "Plum Purple", "cat": "casual", "p": 6999, "o": 0, "tag": "New",
+    {"id": "purple-bow-tie-abaya", "n": "Bow Tie Neck Abaya (Plum Purple)", "color": "Plum Purple", "cat": "simple", "p": 6999, "o": 0, "tag": "New",
      "d": "A plum purple abaya with a bow tie neckline and gathered tie-up cuffs. Soft, light and easy to wear all day.",
      "f": ["Soft flowing fabric", "Bow tie neckline", "Gathered tie-up cuffs", "Relaxed everyday fit"],
      "img": ["purple-bow-1.jpg", "purple-bow-2.jpg"]}

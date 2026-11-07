@@ -101,7 +101,7 @@ const PRODUCTS = [
       "url" : "abayas/black-floral-embroidered-abaya/"
    },
    {
-      "cat" : "formal",
+      "cat" : "simple",
       "id" : "navy-bow-tie-abaya",
       "img" : [
          "images/products/navy-bow-1.jpg",
@@ -134,7 +134,7 @@ const PRODUCTS = [
       "url" : "abayas/pink-striped-button-down-abaya/"
    },
    {
-      "cat" : "casual",
+      "cat" : "simple",
       "id" : "maroon-bow-tie-abaya",
       "img" : [
          "images/products/maroon-bow-1.jpg",
@@ -145,7 +145,7 @@ const PRODUCTS = [
       "url" : "abayas/maroon-bow-tie-abaya/"
    },
    {
-      "cat" : "casual",
+      "cat" : "simple",
       "id" : "purple-bow-tie-abaya",
       "img" : [
          "images/products/purple-bow-1.jpg",

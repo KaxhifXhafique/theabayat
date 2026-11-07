@@ -166,7 +166,7 @@ sub foot {
   </div>
 </footer>
 
-<a class="wa-float" data-wa target="_blank" rel="noopener" aria-label="Chat on WhatsApp">$SVG_WA</a>
+<a class="wa-float" data-wa target="_blank" rel="noopener">$SVG_WA<span>Chat with us</span></a>
 
 <div class="overlay" id="overlay"></div>
 <aside class="drawer" id="drawer" aria-label="Shopping cart">
@@ -225,8 +225,8 @@ sub cat_tiles {
   join '', map {
     my $c = $_;
     my $count = grep { $_->{cat} eq $c->{id} } @prods;
-    qq{<a class="ctile" href="$r} . clink($c) . qq{"><img src="$r} . img($c->{img}) . qq{" alt="$c->{name} abayas" loading="lazy" width="600" height="800">}
-    . qq{<div><h3>$c->{name}</h3><span>$count styles &middot; Shop now</span></div></a>}
+    qq{<a class="ctile" href="$r} . clink($c) . qq{"><span class="win"><img src="$r} . img($c->{img}) . qq{" alt="$c->{name} abayas" loading="lazy" width="600" height="800"></span>}
+    . qq{<h3>$c->{name}</h3><span class="cnt">$count styles</span></a>}
   } @cats;
 }
 
@@ -266,7 +266,7 @@ sub cat_tiles {
 
   write_page('index.html', head(r => $r, path => '', ld => $ld,
       title => 'Abayat | The Modest Edit - Premium Abayas Online in Pakistan',
-      desc  => 'Shop premium abayas online in Pakistan. Party wear, formal and casual abayas in Korean nida, georgette and jacquard. Rs. 6,999 with cash on delivery nationwide.')
+      desc  => 'Shop premium abayas online in Pakistan. Party wear, formal, casual and simple abayas in Korean nida, georgette and jacquard. Rs. 6,999 with cash on delivery nationwide.')
     . <<"HTML" . foot($r));
 
 <main>
@@ -274,8 +274,8 @@ sub cat_tiles {
   <div class="hero-text">
     <div class="hero-brand">Abayat</div>
     <div class="hero-tag">The Modest Edit</div>
-    <h1>Premium Abayas Online in Pakistan</h1>
-    <p>Party wear, formal and casual abayas in soft, flowing fabrics. Order on WhatsApp with cash on delivery.</p>
+    <h1>Modesty, Beautifully Worn.</h1>
+    <p>Discover premium party, formal &amp; everyday abayas in soft, flowy and breathable fabrics - designed to drape gracefully and feel effortlessly elegant.</p>
     <a class="btn" href="#all">Shop the collection</a>
     <img class="flower" src="images/flower.jpg" alt="" width="620" height="425">
   </div>
@@ -285,8 +285,7 @@ sub cat_tiles {
 <section class="sec" id="categories">
   <div class="wrap">
     <div class="center-head">
-      <div class="kicker">Shop by category</div>
-      <h2 class="title">Find your edit</h2>
+      <h2 class="title">Shop By Category</h2>
     </div>
     <div class="ctiles">@{[ cat_tiles($r) ]}</div>
   </div>
@@ -301,7 +300,7 @@ $sections</div>
     <div>
       <div class="kicker">About Abayat</div>
       <h2 class="title">Buy abayas online in Pakistan</h2>
-      <p>Abayat brings you premium abayas for every part of your day. Our <a href="party-wear/">party wear abayas</a> feature pearl work, beads and lace for weddings and Eid. Our <a href="formal-wear/">formal abayas</a> come in rich colours like navy blue, coffee brown and black, while our <a href="casual-wear/">casual abayas</a> are light, breathable and easy to wear daily.</p>
+      <p>Abayat brings you premium abayas for every part of your day. Our <a href="party-wear/">party wear abayas</a> feature pearl work, beads and lace for weddings and Eid. Our <a href="formal-wear/">formal abayas</a> come in rich colours like navy blue, coffee brown and black, while our <a href="casual-wear/">casual abayas</a> are light, breathable and easy to wear daily. For a clean, plain look, browse our <a href="simple-abaya/">simple abayas</a>.</p>
       <p>Every abaya is Rs. 6,999, available in sizes 50 to 60, and delivered all over Pakistan with cash on delivery. Order in a minute on WhatsApp.</p>
     </div>
   </div>
