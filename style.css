@@ -37,17 +37,16 @@ header{position:sticky;top:0;z-index:50;background:var(--white);border-bottom:1p
 .dd.open .dd-menu{display:block}
 @media(hover:hover) and (min-width:1001px){.dd:hover .dd-menu{display:block}}
 
-/* hero */
-.hero{display:grid;grid-template-columns:1.15fr 1fr;background:var(--sage);overflow:hidden}
-.hero-text{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:48px 24px 48px max(24px,calc((100vw - 1320px)/2 + 24px));min-height:620px}
-.hero-text>*{position:relative;z-index:1}
+/* hero: full-width photo banner, text on the sage wall */
+.hero{position:relative;display:flex;align-items:center;min-height:clamp(520px,46vw,680px);background:var(--sage);overflow:hidden}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:68% 30%}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(168,182,155,.92) 0,rgba(168,182,155,.7) 32%,rgba(168,182,155,0) 58%)}
+.hero-in{position:relative;z-index:2;width:100%}
+.hero-text{max-width:520px;padding:48px 0}
 .hero-brand{font-family:var(--script);font-size:112px;line-height:1}
 .hero-tag{font-family:var(--hand);font-size:34px;line-height:1.2;margin-bottom:22px}
 .hero h1{font-size:15px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
 .hero p{font-size:15px;max-width:440px;margin:8px 0 22px}
-.hero .flower{position:absolute;z-index:0;right:0;bottom:0;width:min(46%,340px);height:auto;-webkit-mask-image:linear-gradient(to right,transparent,#000 22%),linear-gradient(to bottom,transparent,#000 18%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent,#000 22%),linear-gradient(to bottom,transparent,#000 18%);mask-composite:intersect}
-.hero-img{position:relative}
-.hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
 
 /* section heads */
 .sec{padding:56px 0}
@@ -60,8 +59,8 @@ header{position:sticky;top:0;z-index:50;background:var(--white);border-bottom:1p
 
 /* home: shop by category, rounded photo windows with the name underneath */
 .center-head .title{font-weight:400;text-transform:uppercase;letter-spacing:1px}
-.ctiles{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-.ctile{display:block;text-align:center}
+.ctiles{display:flex;flex-wrap:wrap;justify-content:center;gap:28px 24px}
+.ctile{display:block;text-align:center;flex:0 0 calc((100% - 72px) / 4)}
 .ctile .win{display:block;overflow:hidden;border-radius:18px;background:var(--sage-l);border:4px solid var(--sage)}
 .ctile img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top;transition:transform .4s}
 .ctile:hover img{transform:scale(1.04)}
@@ -106,6 +105,22 @@ header{position:sticky;top:0;z-index:50;background:var(--white);border-bottom:1p
 .pills{display:flex;gap:8px;flex-wrap:wrap}
 .pill{border:1px solid var(--leaf);border-radius:20px;padding:5px 16px;font-size:13px;font-weight:500}
 .pill.on{background:var(--leaf);color:#fff}
+/* category landing banner: one title style for every category */
+.cat-banner{position:relative;height:clamp(300px,34vw,440px);background:var(--sage);overflow:hidden;display:flex;align-items:flex-end}
+.cat-banner>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cat-banner::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(28,27,26,.62) 0,rgba(28,27,26,.25) 45%,rgba(28,27,26,0) 70%)}
+.cat-banner .wrap{position:relative;z-index:2;width:100%;padding-bottom:34px;color:#fff}
+.cat-banner .crumbs{color:rgba(255,255,255,.85);margin-bottom:10px}
+.cat-banner .crumbs a:hover{color:#fff;text-decoration:underline}
+.cat-banner h1{font-size:44px;font-weight:400;letter-spacing:2px;text-transform:uppercase;line-height:1.15}
+.cat-banner p{font-size:17px;margin-top:6px}
+/* portrait photos sit on the right, title on the sage panel */
+.cat-banner.tall>img{left:auto;width:min(46%,620px);object-position:center 15%}
+.cat-banner.tall::before{background:linear-gradient(90deg,var(--sage) 0,var(--sage) calc(54% - 40px),rgba(168,182,155,0) calc(54% + 40px))}
+.cat-banner.tall .wrap,.cat-banner.tall .crumbs{color:var(--ink)}
+.soon{text-align:center;background:var(--soft);border:1px dashed var(--twine);border-radius:12px;padding:40px 20px;max-width:640px;margin:0 auto}
+.soon h2{font-size:24px;font-weight:700}
+.soon p{font-size:14px;color:var(--muted);margin:8px 0 18px}
 .cat-head{margin-bottom:24px}
 .cat-head p{font-size:14px;color:var(--muted);margin:8px 0 16px;max-width:720px}
 
@@ -212,9 +227,11 @@ footer li a:hover{text-decoration:underline}
 .nav.open{display:flex;flex-direction:column;align-items:flex-start;position:absolute;top:100%;left:0;right:0;background:#fff;padding:14px 24px;gap:12px;border-bottom:1px solid var(--line)}
 .nav.open .dd-menu{display:block;position:static;box-shadow:none;border:0;padding:4px 0 0 12px;min-width:0}
 .nav.open .dd-menu a{padding:4px 0}
-.hero{grid-template-columns:1fr}
-.hero-text{min-height:0;padding:44px 24px 150px}
-.hero-img{aspect-ratio:4/5;max-height:640px}
+.hero{display:block;min-height:0}
+.hero-bg{position:static;height:auto;aspect-ratio:4/3;object-position:72% 30%}
+.hero::before{display:none}
+.hero-text{max-width:none;padding:32px 0 40px}
+.ctile{flex-basis:calc((100% - 48px) / 3)}
 .grid4,.grid5{grid-template-columns:repeat(3,1fr)}
 .pd{grid-template-columns:1fr;gap:24px}.pinfo{position:static}
 .about-in{grid-template-columns:1fr;gap:24px}.about img{max-width:420px;margin:0 auto}
@@ -228,7 +245,8 @@ footer li a:hover{text-decoration:underline}
 .card .name{font-size:14px}
 .gallery{grid-template-columns:1fr}.thumbs{order:3;flex-direction:row;overflow-x:auto}.thumbs button{flex:0 0 64px}
 .pinfo h1{font-size:24px}.actions{grid-template-columns:1fr}
-.ctiles{grid-template-columns:repeat(2,1fr);gap:20px 14px}
+.ctiles{gap:20px 14px}.ctile{flex-basis:calc((100% - 14px) / 2)}
+.cat-banner h1{font-size:28px;letter-spacing:1px}.cat-banner p{font-size:14px}.cat-banner .wrap{padding-bottom:22px}
 .ctile h3{font-size:14px;margin-top:8px}.ctile .cnt{font-size:12px}
 .wa-float{right:14px;bottom:14px;height:46px;padding:0 16px 0 12px;font-size:14px}
 .fgrid{grid-template-columns:1fr}}

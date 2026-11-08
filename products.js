@@ -2,6 +2,50 @@
 const WHATSAPP = '923331234567';
 const PRODUCTS = [
    {
+      "cat" : "simple",
+      "id" : "maroon-bow-tie-abaya",
+      "img" : [
+         "images/products/maroon-bow-1.jpg",
+         "images/products/maroon-bow-2.jpg"
+      ],
+      "n" : "Bow Tie Neck Abaya (Maroon)",
+      "p" : 6999,
+      "url" : "abayas/maroon-bow-tie-abaya/"
+   },
+   {
+      "cat" : "simple",
+      "id" : "purple-bow-tie-abaya",
+      "img" : [
+         "images/products/purple-bow-1.jpg",
+         "images/products/purple-bow-2.jpg"
+      ],
+      "n" : "Bow Tie Neck Abaya (Plum Purple)",
+      "p" : 6999,
+      "url" : "abayas/purple-bow-tie-abaya/"
+   },
+   {
+      "cat" : "casual",
+      "id" : "blue-checked-button-down-abaya",
+      "img" : [
+         "images/products/blue-check-1.jpg",
+         "images/products/blue-check-2.jpg"
+      ],
+      "n" : "Checked Button-Down Abaya (Denim Blue)",
+      "p" : 6999,
+      "url" : "abayas/blue-checked-button-down-abaya/"
+   },
+   {
+      "cat" : "casual",
+      "id" : "pink-striped-button-down-abaya",
+      "img" : [
+         "images/products/pink-stripe-1.jpg",
+         "images/products/pink-stripe-2.jpg"
+      ],
+      "n" : "Striped Button-Down Abaya (Dusty Pink)",
+      "p" : 6999,
+      "url" : "abayas/pink-striped-button-down-abaya/"
+   },
+   {
       "cat" : "party",
       "id" : "party-wear-blood-red-abaya",
       "img" : [
@@ -63,7 +107,7 @@ const PRODUCTS = [
       "url" : "abayas/aqua-jacquard-open-abaya/"
    },
    {
-      "cat" : "formal",
+      "cat" : "embroidered",
       "id" : "coffee-brown-straight-lace-abaya",
       "img" : [
          "images/products/coffee-brown-1.jpg",
@@ -75,6 +119,18 @@ const PRODUCTS = [
       "n" : "Straight Lace Abaya (Coffee Brown)",
       "p" : 6999,
       "url" : "abayas/coffee-brown-straight-lace-abaya/"
+   },
+   {
+      "cat" : "embroidered",
+      "id" : "black-floral-embroidered-abaya",
+      "img" : [
+         "images/products/black-floral-1.jpg",
+         "images/products/black-floral-2.jpg",
+         "images/products/black-floral-3.jpg"
+      ],
+      "n" : "Floral Embroidered Cuff Abaya (Black)",
+      "p" : 6999,
+      "url" : "abayas/black-floral-embroidered-abaya/"
    },
    {
       "cat" : "formal",
@@ -90,18 +146,6 @@ const PRODUCTS = [
    },
    {
       "cat" : "formal",
-      "id" : "black-floral-embroidered-abaya",
-      "img" : [
-         "images/products/black-floral-1.jpg",
-         "images/products/black-floral-2.jpg",
-         "images/products/black-floral-3.jpg"
-      ],
-      "n" : "Floral Embroidered Cuff Abaya (Black)",
-      "p" : 6999,
-      "url" : "abayas/black-floral-embroidered-abaya/"
-   },
-   {
-      "cat" : "simple",
       "id" : "navy-bow-tie-abaya",
       "img" : [
          "images/products/navy-bow-1.jpg",
@@ -110,50 +154,6 @@ const PRODUCTS = [
       "n" : "Bow Tie Neck Abaya (Navy Blue)",
       "p" : 6999,
       "url" : "abayas/navy-bow-tie-abaya/"
-   },
-   {
-      "cat" : "casual",
-      "id" : "blue-checked-button-down-abaya",
-      "img" : [
-         "images/products/blue-check-1.jpg",
-         "images/products/blue-check-2.jpg"
-      ],
-      "n" : "Checked Button-Down Abaya (Denim Blue)",
-      "p" : 6999,
-      "url" : "abayas/blue-checked-button-down-abaya/"
-   },
-   {
-      "cat" : "casual",
-      "id" : "pink-striped-button-down-abaya",
-      "img" : [
-         "images/products/pink-stripe-1.jpg",
-         "images/products/pink-stripe-2.jpg"
-      ],
-      "n" : "Striped Button-Down Abaya (Dusty Pink)",
-      "p" : 6999,
-      "url" : "abayas/pink-striped-button-down-abaya/"
-   },
-   {
-      "cat" : "simple",
-      "id" : "maroon-bow-tie-abaya",
-      "img" : [
-         "images/products/maroon-bow-1.jpg",
-         "images/products/maroon-bow-2.jpg"
-      ],
-      "n" : "Bow Tie Neck Abaya (Maroon)",
-      "p" : 6999,
-      "url" : "abayas/maroon-bow-tie-abaya/"
-   },
-   {
-      "cat" : "simple",
-      "id" : "purple-bow-tie-abaya",
-      "img" : [
-         "images/products/purple-bow-1.jpg",
-         "images/products/purple-bow-2.jpg"
-      ],
-      "n" : "Bow Tie Neck Abaya (Plum Purple)",
-      "p" : 6999,
-      "url" : "abayas/purple-bow-tie-abaya/"
    }
 ]
 ;

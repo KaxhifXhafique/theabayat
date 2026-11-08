@@ -68,7 +68,7 @@ sub card {
   my $old = $p->{o} ? '<s>' . money($p->{o}) . '</s>' : '';
   return <<"HTML";
 <article class="card" data-cat="$p->{cat}">
-  <div class="ph"><a href="$l"><img src="$r@{[ img($p->{img}[0]) ]}" alt="$n $c->{name} abaya" loading="lazy" width="600" height="800"></a>
+  <div class="ph"><a href="$l"><img src="$r@{[ img($p->{img}[0]) ]}" alt="$n - $c->{name}" loading="lazy" width="600" height="800"></a>
     $tag<button class="wish" aria-label="Add to wishlist" data-wish>$SVG_HEART</button>
     <button class="add" aria-label="Add $n to cart" data-add="$p->{id}">$SVG_BAG</button></div>
   <a class="info" href="$l"><div class="cat-l">$c->{name}</div><h3 class="name">$n</h3>
@@ -86,6 +86,7 @@ sub head {
   my $d      = esc($o{desc});
   my $ogimg  = $URL . ($o{image} // 'images/brand-tag.jpg');
   my $type   = $o{ogtype} // 'website';
+  my $robots = $o{noindex} ? 'noindex, follow' : 'index, follow, max-image-preview:large';
   my $ld     = join "\n", map { jsonld($_) } @{ $o{ld} // [] };
   return <<"HTML";
 <!DOCTYPE html>
@@ -96,7 +97,7 @@ sub head {
 <title>$t</title>
 <meta name="description" content="$d">
 <link rel="canonical" href="$canon">
-<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="robots" content="$robots">
 <meta name="theme-color" content="#a8b69b">
 <meta property="og:site_name" content="Abayat">
 <meta property="og:type" content="$type">
@@ -220,13 +221,17 @@ sub crumbs_ld {
     itemListElement => [ map { { '@type' => 'ListItem', position => ++$i, name => $_->[0], item => $URL . $_->[1] } } @items ] };
 }
 
+sub cimg { 'images/' . $_[0]{img} }
+sub cat_items { my $c = shift; grep { $_->{cat} eq $c->{id} } @prods }
+
 sub cat_tiles {
   my ($r) = @_;
   join '', map {
     my $c = $_;
-    my $count = grep { $_->{cat} eq $c->{id} } @prods;
-    qq{<a class="ctile" href="$r} . clink($c) . qq{"><span class="win"><img src="$r} . img($c->{img}) . qq{" alt="$c->{name} abayas" loading="lazy" width="600" height="800"></span>}
-    . qq{<h3>$c->{name}</h3><span class="cnt">$count styles</span></a>}
+    my $count = cat_items($c);
+    my $pos = $c->{pos} // 'center top';
+    qq{<a class="ctile" href="$r} . clink($c) . qq{"><span class="win"><img src="$r} . cimg($c) . qq{" alt="$c->{name}" loading="lazy" width="600" height="750" style="object-position:$pos"></span>}
+    . qq{<h3>$c->{name}</h3><span class="cnt">@{[ $count ? "$count styles" : 'Coming soon' ]}</span></a>}
   } @cats;
 }
 
@@ -241,10 +246,10 @@ sub cat_tiles {
 # ---------- home page ----------
 {
   my $r = '';
-  my $hero = (grep { $_->{id} eq 'pearl-work-kaftan-abaya' } @prods)[0] // $prods[0];
+  # a product section for every category that has products
   my $sections = join '', map {
     my $c = $_;
-    my @list = grep { $_->{cat} eq $c->{id} } @prods;
+    my @list = cat_items($c);
     my $cta = @list % 5
       ? qq{<a class="cta-tile" href="} . clink($c) . qq{"><b>$c->{name}</b><span>View all &rarr;</span></a>} : '';
     qq{<section class="sec cat-sec" id="$c->{slug}">
@@ -254,32 +259,34 @@ sub cat_tiles {
   </div>
 </section>
 }
-  } @cats;
+  } grep { scalar cat_items($_) } @cats;
+  my $catlinks = join ', ', map { qq{<a href="} . clink($_) . qq{">} . lc($_->{name}) . '</a>' } @cats;
 
   my $ld = [
     { '@context' => 'https://schema.org', '@type' => 'ClothingStore', name => 'Abayat', slogan => 'The Modest Edit', url => $URL,
-      logo => $URL . 'images/brand-tag.jpg', image => $URL . 'images/brand-tag.jpg', telephone => '+' . $site{whatsapp},
+      logo => $URL . 'images/brand-tag.jpg', image => $URL . 'images/categories/simple-plain.jpg', telephone => '+' . $site{whatsapp},
       priceRange => 'Rs. 6,999', areaServed => 'PK', address => { '@type' => 'PostalAddress', addressCountry => 'PK' },
-      description => 'Premium abayas online in Pakistan - party wear, formal and casual abayas with cash on delivery.' },
+      description => 'Premium abayas online in Pakistan - simple, casual, party wear, embroidered and formal abayas, hijabs, shawls and prayer wear with cash on delivery.' },
     { '@context' => 'https://schema.org', '@type' => 'WebSite', name => 'Abayat', url => $URL },
   ];
 
-  write_page('index.html', head(r => $r, path => '', ld => $ld,
+  write_page('index.html', head(r => $r, path => '', ld => $ld, image => 'images/categories/simple-plain.jpg',
       title => 'Abayat | The Modest Edit - Premium Abayas Online in Pakistan',
-      desc  => 'Shop premium abayas online in Pakistan. Party wear, formal, casual and simple abayas in Korean nida, georgette and jacquard. Rs. 6,999 with cash on delivery nationwide.')
+      desc  => 'Shop premium abayas online in Pakistan: simple, casual, party wear, embroidered and formal abayas, plus hijabs, shawls and prayer wear. Cash on delivery nationwide.')
     . <<"HTML" . foot($r));
 
 <main>
 <section class="hero" id="top">
-  <div class="hero-text">
-    <div class="hero-brand">Abayat</div>
-    <div class="hero-tag">The Modest Edit</div>
-    <h1>Modesty, Beautifully Worn.</h1>
-    <p>Discover premium party, formal &amp; everyday abayas in soft, flowy and breathable fabrics - designed to drape gracefully and feel effortlessly elegant.</p>
-    <a class="btn" href="#all">Shop the collection</a>
-    <img class="flower" src="images/flower.jpg" alt="" width="620" height="425">
+  <img class="hero-bg" src="images/categories/simple-plain.jpg" alt="Woman in a plain black abaya and hijab" width="1599" height="1066">
+  <div class="wrap hero-in">
+    <div class="hero-text">
+      <div class="hero-brand">Abayat</div>
+      <div class="hero-tag">The Modest Edit</div>
+      <h1>Modesty, Beautifully Worn.</h1>
+      <p>Discover premium party, formal &amp; everyday abayas in soft, flowy and breathable fabrics - designed to drape gracefully and feel effortlessly elegant.</p>
+      <a class="btn" href="#categories">Shop the collection</a>
+    </div>
   </div>
-  <div class="hero-img"><img src="@{[ img($hero->{img}[1]) ]}" alt="@{[ esc($hero->{n}) ]}" width="1208" height="1601"></div>
 </section>
 
 <section class="sec" id="categories">
@@ -300,8 +307,8 @@ $sections</div>
     <div>
       <div class="kicker">About Abayat</div>
       <h2 class="title">Buy abayas online in Pakistan</h2>
-      <p>Abayat brings you premium abayas for every part of your day. Our <a href="party-wear/">party wear abayas</a> feature pearl work, beads and lace for weddings and Eid. Our <a href="formal-wear/">formal abayas</a> come in rich colours like navy blue, coffee brown and black, while our <a href="casual-wear/">casual abayas</a> are light, breathable and easy to wear daily. For a clean, plain look, browse our <a href="simple-abaya/">simple abayas</a>.</p>
-      <p>Every abaya is Rs. 6,999, available in sizes 50 to 60, and delivered all over Pakistan with cash on delivery. Order in a minute on WhatsApp.</p>
+      <p>Abayat brings you premium modest wear for every part of your day. Our <a href="party-wear/">party wear abayas</a> feature pearl work, beads and lace for weddings and Eid, our <a href="embroidered-abaya/">embroidered abayas</a> add delicate detail, and our <a href="formal-wear/">corporate and formal abayas</a> come in rich colours like navy blue for office and special days. For every day, choose <a href="casual-wear/">daily wear and casual abayas</a> or a clean <a href="simple-abaya/">simple / plain abaya</a>.</p>
+      <p>Every abaya is Rs. 6,999, available in sizes 50 to 60, and delivered all over Pakistan with cash on delivery. Shop all categories: $catlinks. Order in a minute on WhatsApp.</p>
     </div>
   </div>
 </section>
@@ -313,31 +320,41 @@ HTML
 # ---------- category pages ----------
 for my $c (@cats) {
   my $r = '../';
-  my @list  = grep { $_->{cat} eq $c->{id} } @prods;
+  my @list  = cat_items($c);
   my $cards = join '', map { card($_, $r) } @list;
   my $other = join '', map { qq{<a class="pill" href="$r} . clink($_) . qq{">$_->{name}</a>} } grep { $_ != $c } @cats;
+  my $pos   = $c->{bpos} // $c->{pos} // 'center';
   my $i = 0;
   my $ld = [
     crumbs_ld([ 'Home', '' ], [ $c->{name}, clink($c) ]),
     { '@context' => 'https://schema.org', '@type' => 'CollectionPage', name => $c->{title}, url => $URL . clink($c), description => $c->{intro},
-      mainEntity => { '@type' => 'ItemList', itemListElement => [ map { { '@type' => 'ListItem', position => ++$i, url => $URL . plink($_), name => $_->{n} } } @list ] } },
+      @list ? (mainEntity => { '@type' => 'ItemList', itemListElement => [ map { { '@type' => 'ListItem', position => ++$i, url => $URL . plink($_), name => $_->{n} } } @list ] }) : () },
   ];
-  write_page(clink($c) . 'index.html', head(r => $r, path => clink($c), ld => $ld, image => img($c->{img}),
+  my $body = @list ? qq{<div class="grid4">$cards</div>}
+    : qq{<div class="soon"><h2>New styles coming soon</h2><p>We are adding $c->{name} to the shop. Message us on WhatsApp to ask what is available or to place an order.</p><a class="btn wa" data-wa target="_blank" rel="noopener">Ask on WhatsApp</a></div>};
+  write_page(clink($c) . 'index.html', head(r => $r, path => clink($c), ld => $ld, image => cimg($c), noindex => !@list,
       title => "$c->{title} | Abayat",
       desc  => short($c->{intro}, 150))
     . <<"HTML" . foot($r));
 
 <main>
-<section class="sec pd-sec">
+<section class="cat-banner@{[ $c->{tall} ? q( tall) : q() ]}">
+  <img src="$r@{[ cimg($c) ]}" alt="$c->{name}" width="1600" height="800" style="object-position:$pos">
   <div class="wrap">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="$r">Home</a> / <span>$c->{name}</span></nav>
+    <h1>$c->{name}</h1>
+    <p>$c->{tagline}</p>
+  </div>
+</section>
+<section class="sec pd-sec">
+  <div class="wrap">
     <div class="cat-head">
-      <div class="kicker">@{[ scalar @list ]} styles</div>
-      <h1 class="title">$c->{title}</h1>
+      <div class="kicker">@{[ @list ? scalar(@list) . ' styles' : 'Coming soon' ]}</div>
+      <h2 class="title">$c->{title}</h2>
       <p>$c->{intro}</p>
-      <div class="pills"><span class="pill on">$c->{name}</span>$other</div>
+      <div class="pills">$other</div>
     </div>
-    <div class="grid4">$cards</div>
+    $body
   </div>
 </section>
 </main>
@@ -368,7 +385,7 @@ for my $p (@prods) {
         seller => { '@type' => 'Organization', name => 'Abayat' } } },
   ];
   write_page(plink($p) . 'index.html', head(r => $r, path => plink($p), ld => $ld, image => img($p->{img}[0]), ogtype => 'product',
-      title => "$p->{n} - $c->{name} Abaya | Abayat",
+      title => "$p->{n} - $c->{name} | Abayat",
       desc  => short($p->{d}, 110) . ' ' . money($p->{p}) . ', cash on delivery in Pakistan.')
     . <<"HTML" . foot($r));
 
@@ -378,7 +395,7 @@ for my $p (@prods) {
     <nav class="crumbs" aria-label="Breadcrumb"><a href="$r">Home</a> / <a href="$r@{[ clink($c) ]}">$c->{name}</a> / <span>$n</span></nav>
     <div class="pd" id="pd" data-id="$p->{id}">
       <div class="gallery">
-        <div class="main"><img id="mainImg" src="$r@{[ img($p->{img}[0]) ]}" alt="$n - $c->{name} abaya" width="600" height="800"></div>
+        <div class="main"><img id="mainImg" src="$r@{[ img($p->{img}[0]) ]}" alt="$n - $c->{name}" width="600" height="800"></div>
         <div class="thumbs">$thumbs</div>
       </div>
       <div class="pinfo">
@@ -417,7 +434,7 @@ HTML
 
 # ---------- sitemap + robots ----------
 {
-  my @urls = ([ '', '1.0' ], (map { [ clink($_), '0.8' ] } @cats), (map { [ plink($_), '0.7' ] } @prods));
+  my @urls = ([ '', '1.0' ], (map { [ clink($_), '0.8' ] } grep { scalar cat_items($_) } @cats), (map { [ plink($_), '0.7' ] } @prods));
   my $x = join '', map { "  <url><loc>$URL$_->[0]</loc><lastmod>$today</lastmod><priority>$_->[1]</priority></url>\n" } @urls;
   write_page('sitemap.xml', qq{<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n$x</urlset>\n});
   write_page('robots.txt', "User-agent: *\nAllow: /\nDisallow: /data/\n\nSitemap: ${URL}sitemap.xml\n");
