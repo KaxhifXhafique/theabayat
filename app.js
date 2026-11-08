@@ -92,6 +92,28 @@ $('okClose').onclick = closeAll;
 /* WhatsApp links in the page */
 document.querySelectorAll('[data-wa]').forEach(a => a.href = waLink('Assalam o Alaikum, I want to ask about your abayas.'));
 
+/* ---------- home hero slider: one category photo after another ---------- */
+const hero = document.querySelector('[data-slider]');
+if(hero){
+  const all = [...hero.querySelectorAll('.slide')], dots = [...hero.querySelectorAll('.dots button')];
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let cur = 0, timer;
+  // portrait photos are hidden on wide screens, so only rotate through the slides on show
+  const shown = () => all.filter(s => getComputedStyle(s).display !== 'none');
+  function go(n){
+    const list = shown(); if(!list.length) return;
+    cur = (n + list.length) % list.length;
+    all.forEach(s => s.classList.toggle('on', s === list[cur]));
+    dots.forEach(d => { const s = all[+d.dataset.i]; d.hidden = !list.includes(s); d.classList.toggle('on', s === list[cur]); });
+  }
+  const play = () => { clearInterval(timer); if(!still) timer = setInterval(() => go(cur + 1), 5000); };
+  dots.forEach(d => d.onclick = () => { go(shown().indexOf(all[+d.dataset.i])); play(); });
+  hero.addEventListener('mouseenter', () => clearInterval(timer));
+  hero.addEventListener('mouseleave', play);
+  addEventListener('resize', () => go(cur));
+  go(0); play();
+}
+
 /* ---------- product page ---------- */
 if($('pd')){
   const x = find($('pd').dataset.id);

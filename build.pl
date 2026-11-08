@@ -260,6 +260,15 @@ sub cat_tiles {
 </section>
 }
   } grep { scalar cat_items($_) } @cats;
+  # hero slides: every category that has its own photo (portrait ones show on phones only)
+  my @slides = grep { $_->{img} ne 'flower.jpg' } @cats;
+  my $k = 0;
+  my $slides = join "\n", map {
+    my $c = $_; my $n = $k++;
+    my $p = $c->{bpos} // 'center'; my $pm = $c->{pos} // 'center top';
+    qq{    <div class="slide@{[ $c->{tall} ? ' tall' : '' ]}@{[ $n ? '' : ' on' ]}" style="--p:$p;--pm:$pm"><img src="} . cimg($c) . qq{" alt="$c->{name}" width="1600" height="1000"@{[ $n ? ' loading="lazy"' : ' fetchpriority="high"' ]}><a class="cap" href="} . clink($c) . qq{">$c->{name} <span aria-hidden="true">&rarr;</span></a></div>}
+  } @slides;
+  my $dots = join '', map { qq{<button data-i="$_"@{[ $_ ? '' : ' class="on"' ]} aria-label="Show slide @{[ $_ + 1 ]}"></button>} } 0 .. $#slides;
   my $catlinks = join ', ', map { qq{<a href="} . clink($_) . qq{">} . lc($_->{name}) . '</a>' } @cats;
 
   my $ld = [
@@ -276,8 +285,11 @@ sub cat_tiles {
     . <<"HTML" . foot($r));
 
 <main>
-<section class="hero" id="top">
-  <img class="hero-bg" src="images/categories/simple-plain.jpg" alt="Woman in a plain black abaya and hijab" width="1599" height="1066">
+<section class="hero" id="top" data-slider>
+  <div class="slides">
+$slides
+  </div>
+  <div class="dots">$dots</div>
   <div class="wrap hero-in">
     <div class="hero-text">
       <div class="hero-brand">Abayat</div>
