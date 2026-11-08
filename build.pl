@@ -147,7 +147,7 @@ HTML
 
 sub foot {
   my ($r) = @_;
-  my $catlinks = join '', map { qq{<li><a href="$r} . clink($_) . qq{">$_->{name} abayas</a></li>} } @cats;
+  my $catlinks = join '', map { qq{<li><a href="$r} . clink($_) . qq{">$_->{name}</a></li>} } @cats;
   return <<"HTML";
 <footer id="contact">
   <div class="wrap">
