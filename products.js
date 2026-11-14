@@ -3,25 +3,80 @@ const WHATSAPP = '923331234567';
 const PRODUCTS = [
    {
       "cat" : "simple",
-      "id" : "maroon-bow-tie-abaya",
+      "id" : "plain-front-open-abaya-pink",
       "img" : [
-         "images/products/maroon-bow-1.jpg",
-         "images/products/maroon-bow-2.jpg"
+         "images/products/plain-pink-1.jpg",
+         "images/products/plain-pink-2.jpg"
       ],
-      "n" : "Bow Tie Neck Abaya (Maroon)",
-      "p" : 6999,
-      "url" : "abayas/maroon-bow-tie-abaya/"
+      "n" : "Plain Front Open Abaya (Pink)",
+      "p" : 3999,
+      "url" : "abayas/plain-front-open-abaya-pink/"
    },
    {
       "cat" : "simple",
-      "id" : "purple-bow-tie-abaya",
+      "id" : "plain-front-open-abaya-white",
       "img" : [
-         "images/products/purple-bow-1.jpg",
-         "images/products/purple-bow-2.jpg"
+         "images/products/plain-white-1.jpg",
+         "images/products/plain-white-2.jpg"
       ],
-      "n" : "Bow Tie Neck Abaya (Plum Purple)",
-      "p" : 6999,
-      "url" : "abayas/purple-bow-tie-abaya/"
+      "n" : "Plain Front Open Abaya (White)",
+      "p" : 3999,
+      "url" : "abayas/plain-front-open-abaya-white/"
+   },
+   {
+      "cat" : "simple",
+      "id" : "plain-front-open-abaya-purple",
+      "img" : [
+         "images/products/plain-purple-1.jpg",
+         "images/products/plain-purple-2.jpg"
+      ],
+      "n" : "Plain Front Open Abaya (Purple)",
+      "p" : 3999,
+      "url" : "abayas/plain-front-open-abaya-purple/"
+   },
+   {
+      "cat" : "simple",
+      "id" : "plain-front-open-abaya-coffee",
+      "img" : [
+         "images/products/plain-coffee-1.jpg",
+         "images/products/plain-coffee-2.jpg"
+      ],
+      "n" : "Plain Front Open Abaya (Coffee Brown)",
+      "p" : 3999,
+      "url" : "abayas/plain-front-open-abaya-coffee/"
+   },
+   {
+      "cat" : "simple",
+      "id" : "plain-front-open-abaya-aqua",
+      "img" : [
+         "images/products/plain-aqua-1.jpg",
+         "images/products/plain-aqua-2.jpg"
+      ],
+      "n" : "Plain Front Open Abaya (Aqua Blue)",
+      "p" : 3999,
+      "url" : "abayas/plain-front-open-abaya-aqua/"
+   },
+   {
+      "cat" : "simple",
+      "id" : "plain-front-open-abaya-black",
+      "img" : [
+         "images/products/plain-black-1.jpg",
+         "images/products/plain-black-2.jpg"
+      ],
+      "n" : "Plain Front Open Abaya (Black)",
+      "p" : 3999,
+      "url" : "abayas/plain-front-open-abaya-black/"
+   },
+   {
+      "cat" : "simple",
+      "id" : "plain-front-open-abaya-navy",
+      "img" : [
+         "images/products/plain-navy-1.jpg",
+         "images/products/plain-navy-2.jpg"
+      ],
+      "n" : "Plain Front Open Abaya (Blue)",
+      "p" : 3999,
+      "url" : "abayas/plain-front-open-abaya-navy/"
    },
    {
       "cat" : "casual",
@@ -52,7 +107,7 @@ const PRODUCTS = [
          "images/products/blood-red-1.jpg",
          "images/products/blood-red-2.jpg"
       ],
-      "n" : "Party Wear Abaya (Blood Red)",
+      "n" : "Pearl Work Kaftan Abaya (Red)",
       "p" : 6999,
       "url" : "abayas/party-wear-blood-red-abaya/"
    },
@@ -64,7 +119,7 @@ const PRODUCTS = [
          "images/products/pearl-kaftan-2.jpg",
          "images/products/pearl-kaftan-3.jpg"
       ],
-      "n" : "Pearl Work Kaftan Abaya (Champagne)",
+      "n" : "Pearl Work Kaftan Abaya (Tea Pink)",
       "p" : 6999,
       "url" : "abayas/pearl-work-kaftan-abaya/"
    },
@@ -89,29 +144,100 @@ const PRODUCTS = [
       "img" : [
          "images/products/dusty-blue-1.jpg",
          "images/products/dusty-blue-2.jpg",
-         "images/products/dusty-blue-3.jpg"
+         "images/products/dusty-blue-3.jpg",
+         "images/products/dusty-blue-4.jpg",
+         "images/products/dusty-blue-5.jpg"
       ],
-      "n" : "Plain Korean Nida Abaya (Dusty Blue)",
+      "n" : "Front Closed Abaya With Bunches (Greyish Blue)",
       "p" : 6999,
       "url" : "abayas/plain-korean-nida-dusty-blue/"
    },
    {
       "cat" : "party",
-      "id" : "aqua-jacquard-open-abaya",
+      "id" : "front-closed-bunches-abaya-black",
       "img" : [
-         "images/products/aqua-jacquard-1.jpg",
-         "images/products/aqua-jacquard-2.jpg"
+         "images/products/bunches-black-1.jpg",
+         "images/products/bunches-black-2.jpg",
+         "images/products/bunches-black-3.jpg"
       ],
-      "n" : "Jacquard Open Abaya With Cream Trim (Aqua)",
+      "n" : "Front Closed Abaya With Bunches (Black)",
       "p" : 6999,
-      "url" : "abayas/aqua-jacquard-open-abaya/"
+      "url" : "abayas/front-closed-bunches-abaya-black/"
+   },
+   {
+      "cat" : "party",
+      "id" : "front-closed-bunches-abaya-purple",
+      "img" : [
+         "images/products/bunches-purple-1.jpg",
+         "images/products/bunches-purple-2.jpg",
+         "images/products/bunches-purple-3.jpg"
+      ],
+      "n" : "Front Closed Abaya With Bunches (Purple)",
+      "p" : 6999,
+      "url" : "abayas/front-closed-bunches-abaya-purple/"
+   },
+   {
+      "cat" : "party",
+      "id" : "front-closed-bunches-abaya-fawn",
+      "img" : [
+         "images/products/bunches-fawn-1.jpg",
+         "images/products/bunches-fawn-2.jpg",
+         "images/products/bunches-fawn-3.jpg"
+      ],
+      "n" : "Front Closed Abaya With Bunches (Fawn)",
+      "p" : 6999,
+      "url" : "abayas/front-closed-bunches-abaya-fawn/"
+   },
+   {
+      "cat" : "party",
+      "id" : "pearl-work-kaftan-abaya-blue",
+      "img" : [
+         "images/products/kaftan-blue-1.jpg",
+         "images/products/kaftan-blue-2.jpg"
+      ],
+      "n" : "Pearl Work Kaftan Abaya (Blue)",
+      "p" : 6999,
+      "url" : "abayas/pearl-work-kaftan-abaya-blue/"
+   },
+   {
+      "cat" : "party",
+      "id" : "pearl-work-kaftan-abaya-brown",
+      "img" : [
+         "images/products/coffee-brown-1.jpg",
+         "images/products/coffee-brown-2.jpg"
+      ],
+      "n" : "Pearl Work Kaftan Abaya (Brown)",
+      "p" : 6999,
+      "url" : "abayas/pearl-work-kaftan-abaya-brown/"
+   },
+   {
+      "cat" : "party",
+      "id" : "double-layer-abaya-peach",
+      "img" : [
+         "images/products/double-peach-1.jpg",
+         "images/products/double-peach-2.jpg",
+         "images/products/double-peach-3.jpg"
+      ],
+      "n" : "Double Layer Abaya (Peach & White)",
+      "p" : 6999,
+      "url" : "abayas/double-layer-abaya-peach/"
+   },
+   {
+      "cat" : "party",
+      "id" : "double-layer-abaya-lilac",
+      "img" : [
+         "images/products/double-lilac-1.jpg",
+         "images/products/double-lilac-2.jpg",
+         "images/products/double-lilac-3.jpg"
+      ],
+      "n" : "Double Layer Abaya (Light Violet & Silverish Purple)",
+      "p" : 6999,
+      "url" : "abayas/double-layer-abaya-lilac/"
    },
    {
       "cat" : "embroidered",
       "id" : "coffee-brown-straight-lace-abaya",
       "img" : [
-         "images/products/coffee-brown-1.jpg",
-         "images/products/coffee-brown-2.jpg",
          "images/products/coffee-brown-3.jpg",
          "images/products/coffee-brown-4.jpg",
          "images/products/coffee-brown-5.jpg"

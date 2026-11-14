@@ -79,15 +79,15 @@
       "title" : "Modest Accessories"
     },
     {
-      "bpos" : "50% 15%",
+      "bpos" : "62% 40%",
       "id" : "hijab",
-      "img" : "products/black-floral-3.jpg",
+      "img" : "categories/hijab-naqab.jpg",
       "intro" : "Soft, breathable hijabs and naqabs in easy-to-match colours, made to stay comfortable and secure all day.",
       "name" : "Hijab & Naqab",
-      "pos" : "50% 8%",
+      "noslide" : true,
+      "pos" : "81% 0%",
       "slug" : "hijab-naqab",
       "tagline" : "Soft. Breathable. Secure.",
-      "tall" : true,
       "title" : "Hijabs & Naqabs in Pakistan"
     },
     {
@@ -128,42 +128,142 @@
   "products" : [
     {
       "cat" : "simple",
-      "color" : "Maroon",
-      "d" : "A rich maroon abaya with a bow tie neckline and tie-up cuffs. A relaxed, comfortable fit for everyday wear with a polished look.",
+      "color" : "Pink",
+      "d" : "A plain front-open abaya in pink imported Korean nida. Simple, light and easy to wear every day.",
       "f" : [
-        "Soft flowing fabric",
-        "Bow tie neckline",
-        "Tie-up sleeve cuffs",
-        "Comfortable everyday fit"
+        "Plain front-open abaya",
+        "Fabric: imported Korean nida",
+        "Colour: Pink",
+        "Size: length 60, chest 25, sleeves 25"
       ],
-      "id" : "maroon-bow-tie-abaya",
+      "id" : "plain-front-open-abaya-pink",
       "img" : [
-        "maroon-bow-1.jpg",
-        "maroon-bow-2.jpg"
+        "plain-pink-1.jpg",
+        "plain-pink-2.jpg"
       ],
-      "n" : "Bow Tie Neck Abaya (Maroon)",
+      "n" : "Plain Front Open Abaya (Pink)",
       "o" : 0,
-      "p" : 6999,
-      "tag" : ""
+      "p" : 3999,
+      "tag" : "New"
     },
     {
       "cat" : "simple",
-      "color" : "Plum Purple",
-      "d" : "A plum purple abaya with a bow tie neckline and gathered tie-up cuffs. Soft, light and easy to wear all day.",
+      "color" : "White",
+      "d" : "A plain front-open abaya in white imported Korean nida. Simple, light and easy to wear every day.",
       "f" : [
-        "Soft flowing fabric",
-        "Bow tie neckline",
-        "Gathered tie-up cuffs",
-        "Relaxed everyday fit"
+        "Plain front-open abaya",
+        "Fabric: imported Korean nida",
+        "Colour: White",
+        "Size: length 60, chest 25, sleeves 25"
       ],
-      "id" : "purple-bow-tie-abaya",
+      "id" : "plain-front-open-abaya-white",
       "img" : [
-        "purple-bow-1.jpg",
-        "purple-bow-2.jpg"
+        "plain-white-1.jpg",
+        "plain-white-2.jpg"
       ],
-      "n" : "Bow Tie Neck Abaya (Plum Purple)",
+      "n" : "Plain Front Open Abaya (White)",
       "o" : 0,
-      "p" : 6999,
+      "p" : 3999,
+      "tag" : "New"
+    },
+    {
+      "cat" : "simple",
+      "color" : "Purple",
+      "d" : "A plain front-open abaya in purple imported Korean nida. Simple, light and easy to wear every day.",
+      "f" : [
+        "Plain front-open abaya",
+        "Fabric: imported Korean nida",
+        "Colour: Purple",
+        "Size: length 60, chest 25, sleeves 25"
+      ],
+      "id" : "plain-front-open-abaya-purple",
+      "img" : [
+        "plain-purple-1.jpg",
+        "plain-purple-2.jpg"
+      ],
+      "n" : "Plain Front Open Abaya (Purple)",
+      "o" : 0,
+      "p" : 3999,
+      "tag" : "New"
+    },
+    {
+      "cat" : "simple",
+      "color" : "Coffee Brown",
+      "d" : "A plain front-open abaya in coffee brown imported Korean nida. Simple, light and easy to wear every day.",
+      "f" : [
+        "Plain front-open abaya",
+        "Fabric: imported Korean nida",
+        "Colour: Coffee Brown",
+        "Size: length 60, chest 25, sleeves 25"
+      ],
+      "id" : "plain-front-open-abaya-coffee",
+      "img" : [
+        "plain-coffee-1.jpg",
+        "plain-coffee-2.jpg"
+      ],
+      "n" : "Plain Front Open Abaya (Coffee Brown)",
+      "o" : 0,
+      "p" : 3999,
+      "tag" : "New"
+    },
+    {
+      "cat" : "simple",
+      "color" : "Aqua Blue",
+      "d" : "A plain front-open abaya in aqua blue imported Korean nida. Simple, light and easy to wear every day.",
+      "f" : [
+        "Plain front-open abaya",
+        "Fabric: imported Korean nida",
+        "Colour: Aqua Blue",
+        "Size: length 60, chest 25, sleeves 25"
+      ],
+      "id" : "plain-front-open-abaya-aqua",
+      "img" : [
+        "plain-aqua-1.jpg",
+        "plain-aqua-2.jpg"
+      ],
+      "n" : "Plain Front Open Abaya (Aqua Blue)",
+      "o" : 0,
+      "p" : 3999,
+      "tag" : "New"
+    },
+    {
+      "cat" : "simple",
+      "color" : "Black",
+      "d" : "A plain front-open abaya in black imported Korean nida. Simple, light and easy to wear every day.",
+      "f" : [
+        "Plain front-open abaya",
+        "Fabric: imported Korean nida",
+        "Colour: Black",
+        "Size: length 60, chest 25, sleeves 25"
+      ],
+      "id" : "plain-front-open-abaya-black",
+      "img" : [
+        "plain-black-1.jpg",
+        "plain-black-2.jpg"
+      ],
+      "n" : "Plain Front Open Abaya (Black)",
+      "o" : 0,
+      "p" : 3999,
+      "tag" : "New"
+    },
+    {
+      "cat" : "simple",
+      "color" : "Blue",
+      "d" : "A plain front-open abaya in blue imported Korean nida. Simple, light and easy to wear every day.",
+      "f" : [
+        "Plain front-open abaya",
+        "Fabric: imported Korean nida",
+        "Colour: Blue",
+        "Size: length 60, chest 25, sleeves 25"
+      ],
+      "id" : "plain-front-open-abaya-navy",
+      "img" : [
+        "plain-navy-1.jpg",
+        "plain-navy-2.jpg"
+      ],
+      "n" : "Plain Front Open Abaya (Blue)",
+      "o" : 0,
+      "p" : 3999,
       "tag" : "New"
     },
     {
@@ -208,33 +308,33 @@
     },
     {
       "cat" : "party",
-      "color" : "Blood Red",
-      "d" : "A bold blood red kaftan abaya in jacquard satin with a gathered waist and pearl-flower embellishment. Wide batwing sleeves finished with pearl leaf detail.",
+      "color" : "Red",
+      "d" : "A pearl work kaftan style abaya in red, made from imported Korean textured nida with a pleated waist and pearl detail. Bold and festive for weddings, Eid and parties.",
       "f" : [
-        "Jacquard satin fabric",
-        "Pearl-flower waist detail",
-        "Wide batwing sleeves with pearl motifs",
-        "Made for weddings, Eid and parties"
+        "Pearl work kaftan style",
+        "Fabric: imported Korean textured nida",
+        "Colour: red",
+        "Size: length 60, chest 25, sleeves 25"
       ],
       "id" : "party-wear-blood-red-abaya",
       "img" : [
         "blood-red-1.jpg",
         "blood-red-2.jpg"
       ],
-      "n" : "Party Wear Abaya (Blood Red)",
+      "n" : "Pearl Work Kaftan Abaya (Red)",
       "o" : 0,
       "p" : 6999,
       "tag" : "Party wear"
     },
     {
       "cat" : "party",
-      "color" : "Champagne",
-      "d" : "An elegant champagne kaftan abaya in soft satin jacquard with a leaf pattern. A pleated waist with pearl flowers and pearl work on the sleeves gives it a luxurious finish.",
+      "color" : "Tea Pink",
+      "d" : "A pearl work kaftan style abaya in a soft tea pink, made from imported Korean textured nida with a pleated waist and pearl detail. Elegant and light for evening events.",
       "f" : [
-        "Satin jacquard with leaf pattern",
-        "Pearl-flower pleated waist",
-        "Pearl work on sleeves",
-        "Relaxed kaftan fit"
+        "Pearl work kaftan style",
+        "Fabric: imported Korean textured nida",
+        "Colour: a soft tea pink",
+        "Size: length 60, chest 25, sleeves 25"
       ],
       "id" : "pearl-work-kaftan-abaya",
       "img" : [
@@ -242,7 +342,7 @@
         "pearl-kaftan-2.jpg",
         "pearl-kaftan-3.jpg"
       ],
-      "n" : "Pearl Work Kaftan Abaya (Champagne)",
+      "n" : "Pearl Work Kaftan Abaya (Tea Pink)",
       "o" : 0,
       "p" : 6999,
       "tag" : "New"
@@ -273,41 +373,168 @@
     },
     {
       "cat" : "party",
-      "color" : "Dusty Blue",
-      "d" : "A flowy, soft and lightweight abaya in plain Korean nida, in a calm dusty blue shade. Black beaded applique on the sleeves makes it party-ready.",
+      "color" : "Greyish Blue",
+      "d" : "A front closed abaya in greyish blue imported Korean nida, finished with black beaded bunches on the sleeves and back.",
       "f" : [
-        "Plain Korean nida",
-        "Flowy, soft and lightweight",
-        "Black beaded sleeve applique",
-        "Party wear"
+        "Front closed abaya",
+        "Black beaded bunches on sleeves and back",
+        "Fabric: imported Korean nida",
+        "Size: length 60, chest 25, sleeves 25"
       ],
       "id" : "plain-korean-nida-dusty-blue",
       "img" : [
         "dusty-blue-1.jpg",
         "dusty-blue-2.jpg",
-        "dusty-blue-3.jpg"
+        "dusty-blue-3.jpg",
+        "dusty-blue-4.jpg",
+        "dusty-blue-5.jpg"
       ],
-      "n" : "Plain Korean Nida Abaya (Dusty Blue)",
+      "n" : "Front Closed Abaya With Bunches (Greyish Blue)",
       "o" : 0,
       "p" : 6999,
       "tag" : ""
     },
     {
       "cat" : "party",
-      "color" : "Aqua",
-      "d" : "A fresh aqua abaya in soft satin jacquard with a tonal leaf pattern, finished with contrast cream satin panels on the front and wide cuffs.",
+      "color" : "Black",
+      "d" : "A premium quality party wear abaya in black, front closed, with black beaded bunches on the sleeves and back. Made from imported Korean nida.",
       "f" : [
-        "Satin jacquard with tonal leaf pattern",
-        "Contrast cream satin front and cuffs",
-        "Wide, relaxed sleeves",
-        "Ideal for Eid, dawats and parties"
+        "Front closed abaya",
+        "Black beaded bunches on sleeves and back",
+        "Fabric: imported Korean nida",
+        "Size: length 60, chest 25, sleeves 25"
       ],
-      "id" : "aqua-jacquard-open-abaya",
+      "id" : "front-closed-bunches-abaya-black",
       "img" : [
-        "aqua-jacquard-1.jpg",
-        "aqua-jacquard-2.jpg"
+        "bunches-black-1.jpg",
+        "bunches-black-2.jpg",
+        "bunches-black-3.jpg"
       ],
-      "n" : "Jacquard Open Abaya With Cream Trim (Aqua)",
+      "n" : "Front Closed Abaya With Bunches (Black)",
+      "o" : 0,
+      "p" : 6999,
+      "tag" : "New"
+    },
+    {
+      "cat" : "party",
+      "color" : "Purple",
+      "d" : "A premium quality party wear abaya in purple, front closed, with black beaded bunches on the sleeves and back. Made from imported Korean nida.",
+      "f" : [
+        "Front closed abaya",
+        "Black beaded bunches on sleeves and back",
+        "Fabric: imported Korean nida",
+        "Size: length 60, chest 25, sleeves 25"
+      ],
+      "id" : "front-closed-bunches-abaya-purple",
+      "img" : [
+        "bunches-purple-1.jpg",
+        "bunches-purple-2.jpg",
+        "bunches-purple-3.jpg"
+      ],
+      "n" : "Front Closed Abaya With Bunches (Purple)",
+      "o" : 0,
+      "p" : 6999,
+      "tag" : "New"
+    },
+    {
+      "cat" : "party",
+      "color" : "Fawn",
+      "d" : "A premium quality party wear abaya in fawn, front closed, with black beaded bunches on the sleeves and back. Made from imported Korean nida.",
+      "f" : [
+        "Front closed abaya",
+        "Black beaded bunches on sleeves and back",
+        "Fabric: imported Korean nida",
+        "Size: length 60, chest 25, sleeves 25"
+      ],
+      "id" : "front-closed-bunches-abaya-fawn",
+      "img" : [
+        "bunches-fawn-1.jpg",
+        "bunches-fawn-2.jpg",
+        "bunches-fawn-3.jpg"
+      ],
+      "n" : "Front Closed Abaya With Bunches (Fawn)",
+      "o" : 0,
+      "p" : 6999,
+      "tag" : "New"
+    },
+    {
+      "cat" : "party",
+      "color" : "Blue",
+      "d" : "A pearl work kaftan style abaya in deep blue, made from imported Korean textured nida with a pleated waist and pearl detail. A graceful choice for parties and formal dinners.",
+      "f" : [
+        "Pearl work kaftan style",
+        "Fabric: imported Korean textured nida",
+        "Colour: Blue",
+        "Size: length 60, chest 25, sleeves 25"
+      ],
+      "id" : "pearl-work-kaftan-abaya-blue",
+      "img" : [
+        "kaftan-blue-1.jpg",
+        "kaftan-blue-2.jpg"
+      ],
+      "n" : "Pearl Work Kaftan Abaya (Blue)",
+      "o" : 0,
+      "p" : 6999,
+      "tag" : "New"
+    },
+    {
+      "cat" : "party",
+      "color" : "Brown",
+      "d" : "A pearl work kaftan style abaya in rich brown, made from imported Korean textured nida with a pleated waist and pearl detail. Warm, elegant and easy to wear all evening.",
+      "f" : [
+        "Pearl work kaftan style",
+        "Fabric: imported Korean textured nida",
+        "Colour: Brown",
+        "Size: length 60, chest 25, sleeves 25"
+      ],
+      "id" : "pearl-work-kaftan-abaya-brown",
+      "img" : [
+        "coffee-brown-1.jpg",
+        "coffee-brown-2.jpg"
+      ],
+      "n" : "Pearl Work Kaftan Abaya (Brown)",
+      "o" : 0,
+      "p" : 6999,
+      "tag" : ""
+    },
+    {
+      "cat" : "party",
+      "color" : "Peach & White",
+      "d" : "A front closed double layer abaya in peach and white, made from flowing silk and chiffon for a soft, elegant drape.",
+      "f" : [
+        "Front closed double layer abaya",
+        "Fabric: silk and chiffon",
+        "Colour: Peach & White",
+        "Size: length 60, chest 25, sleeves 25"
+      ],
+      "id" : "double-layer-abaya-peach",
+      "img" : [
+        "double-peach-1.jpg",
+        "double-peach-2.jpg",
+        "double-peach-3.jpg"
+      ],
+      "n" : "Double Layer Abaya (Peach & White)",
+      "o" : 0,
+      "p" : 6999,
+      "tag" : "New"
+    },
+    {
+      "cat" : "party",
+      "color" : "Light Violet & Silverish Purple",
+      "d" : "A front closed double layer abaya in light violet and silverish purple, made from flowing silk and chiffon for a soft, elegant drape.",
+      "f" : [
+        "Front closed double layer abaya",
+        "Fabric: silk and chiffon",
+        "Colour: Light Violet & Silverish Purple",
+        "Size: length 60, chest 25, sleeves 25"
+      ],
+      "id" : "double-layer-abaya-lilac",
+      "img" : [
+        "double-lilac-1.jpg",
+        "double-lilac-2.jpg",
+        "double-lilac-3.jpg"
+      ],
+      "n" : "Double Layer Abaya (Light Violet & Silverish Purple)",
       "o" : 0,
       "p" : 6999,
       "tag" : "New"
@@ -324,8 +551,6 @@
       ],
       "id" : "coffee-brown-straight-lace-abaya",
       "img" : [
-        "coffee-brown-1.jpg",
-        "coffee-brown-2.jpg",
         "coffee-brown-3.jpg",
         "coffee-brown-4.jpg",
         "coffee-brown-5.jpg"

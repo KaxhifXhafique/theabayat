@@ -261,7 +261,7 @@ sub cat_tiles {
 }
   } grep { scalar cat_items($_) } @cats;
   # hero slides: every category that has its own photo (portrait ones show on phones only)
-  my @slides = grep { $_->{img} ne 'flower.jpg' } @cats;
+  my @slides = grep { $_->{img} ne q(flower.jpg) && !$_->{noslide} } @cats;
   my $k = 0;
   my $slides = join "\n", map {
     my $c = $_; my $n = $k++;
