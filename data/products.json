@@ -307,6 +307,27 @@
       "tag" : "New"
     },
     {
+      "cat" : "casual",
+      "color" : "Coffee Brown",
+      "d" : "A rich coffee brown abaya in soft jacquard fabric with a subtle tonal pattern. Finished with delicate embroidered lace on the sleeves for a graceful, feminine touch.",
+      "f" : [
+        "Soft jacquard fabric with tonal print",
+        "Embroidered lace finish on sleeves",
+        "Flowy, comfortable fall",
+        "Suitable for daily and occasion wear"
+      ],
+      "id" : "coffee-brown-straight-lace-abaya",
+      "img" : [
+        "coffee-brown-3.jpg",
+        "coffee-brown-4.jpg",
+        "coffee-brown-5.jpg"
+      ],
+      "n" : "Straight Lace Abaya (Coffee Brown)",
+      "o" : 0,
+      "p" : 6999,
+      "tag" : "New"
+    },
+    {
       "cat" : "party",
       "color" : "Red",
       "d" : "A pearl work kaftan style abaya in red, made from imported Korean textured nida with a pleated waist and pearl detail. Bold and festive for weddings, Eid and parties.",
@@ -535,27 +556,6 @@
         "double-lilac-3.jpg"
       ],
       "n" : "Double Layer Abaya (Light Violet & Silverish Purple)",
-      "o" : 0,
-      "p" : 6999,
-      "tag" : "New"
-    },
-    {
-      "cat" : "embroidered",
-      "color" : "Coffee Brown",
-      "d" : "A rich coffee brown abaya in soft jacquard fabric with a subtle tonal pattern. Finished with delicate embroidered lace on the sleeves for a graceful, feminine touch.",
-      "f" : [
-        "Soft jacquard fabric with tonal print",
-        "Embroidered lace finish on sleeves",
-        "Flowy, comfortable fall",
-        "Suitable for daily and occasion wear"
-      ],
-      "id" : "coffee-brown-straight-lace-abaya",
-      "img" : [
-        "coffee-brown-3.jpg",
-        "coffee-brown-4.jpg",
-        "coffee-brown-5.jpg"
-      ],
-      "n" : "Straight Lace Abaya (Coffee Brown)",
       "o" : 0,
       "p" : 6999,
       "tag" : "New"

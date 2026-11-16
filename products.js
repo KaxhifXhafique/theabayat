@@ -101,6 +101,18 @@ const PRODUCTS = [
       "url" : "abayas/pink-striped-button-down-abaya/"
    },
    {
+      "cat" : "casual",
+      "id" : "coffee-brown-straight-lace-abaya",
+      "img" : [
+         "images/products/coffee-brown-3.jpg",
+         "images/products/coffee-brown-4.jpg",
+         "images/products/coffee-brown-5.jpg"
+      ],
+      "n" : "Straight Lace Abaya (Coffee Brown)",
+      "p" : 6999,
+      "url" : "abayas/coffee-brown-straight-lace-abaya/"
+   },
+   {
       "cat" : "party",
       "id" : "party-wear-blood-red-abaya",
       "img" : [
@@ -233,18 +245,6 @@ const PRODUCTS = [
       "n" : "Double Layer Abaya (Light Violet & Silverish Purple)",
       "p" : 6999,
       "url" : "abayas/double-layer-abaya-lilac/"
-   },
-   {
-      "cat" : "embroidered",
-      "id" : "coffee-brown-straight-lace-abaya",
-      "img" : [
-         "images/products/coffee-brown-3.jpg",
-         "images/products/coffee-brown-4.jpg",
-         "images/products/coffee-brown-5.jpg"
-      ],
-      "n" : "Straight Lace Abaya (Coffee Brown)",
-      "p" : 6999,
-      "url" : "abayas/coffee-brown-straight-lace-abaya/"
    },
    {
       "cat" : "embroidered",
