@@ -328,6 +328,26 @@
       "tag" : "New"
     },
     {
+      "cat" : "casual",
+      "color" : "Navy Blue",
+      "d" : "A smart navy blue abaya with a soft bow tie at the neckline and tie-up cuffs. Clean lines and a gentle fall make it perfect for office and formal days.",
+      "f" : [
+        "Soft flowing fabric",
+        "Bow tie neckline",
+        "Tie-up sleeve cuffs",
+        "Straight, modest silhouette"
+      ],
+      "id" : "navy-bow-tie-abaya",
+      "img" : [
+        "navy-bow-1.jpg",
+        "navy-bow-2.jpg"
+      ],
+      "n" : "Bow Tie Neck Abaya (Navy Blue)",
+      "o" : 0,
+      "p" : 6999,
+      "tag" : "New"
+    },
+    {
       "cat" : "party",
       "color" : "Red",
       "d" : "A pearl work kaftan style abaya in red, made from imported Korean textured nida with a pleated waist and pearl detail. Bold and festive for weddings, Eid and parties.",
@@ -582,7 +602,7 @@
       "tag" : "New"
     },
     {
-      "cat" : "formal",
+      "cat" : "embroidered",
       "color" : "Deep Navy Blue",
       "d" : "A deep navy blue abaya in imported textured Korean nida. The fabric has a soft sheen and a woven floral texture, with fine cut-work lace on the cuffs.",
       "f" : [
@@ -598,26 +618,6 @@
         "textured-nida-3.jpg"
       ],
       "n" : "Imported Textured Korean Nida Navy Blue Abaya (Deep Navy Blue)",
-      "o" : 0,
-      "p" : 6999,
-      "tag" : "New"
-    },
-    {
-      "cat" : "formal",
-      "color" : "Navy Blue",
-      "d" : "A smart navy blue abaya with a soft bow tie at the neckline and tie-up cuffs. Clean lines and a gentle fall make it perfect for office and formal days.",
-      "f" : [
-        "Soft flowing fabric",
-        "Bow tie neckline",
-        "Tie-up sleeve cuffs",
-        "Straight, modest silhouette"
-      ],
-      "id" : "navy-bow-tie-abaya",
-      "img" : [
-        "navy-bow-1.jpg",
-        "navy-bow-2.jpg"
-      ],
-      "n" : "Bow Tie Neck Abaya (Navy Blue)",
       "o" : 0,
       "p" : 6999,
       "tag" : "New"

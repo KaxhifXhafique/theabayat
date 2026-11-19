@@ -113,6 +113,17 @@ const PRODUCTS = [
       "url" : "abayas/coffee-brown-straight-lace-abaya/"
    },
    {
+      "cat" : "casual",
+      "id" : "navy-bow-tie-abaya",
+      "img" : [
+         "images/products/navy-bow-1.jpg",
+         "images/products/navy-bow-2.jpg"
+      ],
+      "n" : "Bow Tie Neck Abaya (Navy Blue)",
+      "p" : 6999,
+      "url" : "abayas/navy-bow-tie-abaya/"
+   },
+   {
       "cat" : "party",
       "id" : "party-wear-blood-red-abaya",
       "img" : [
@@ -259,7 +270,7 @@ const PRODUCTS = [
       "url" : "abayas/black-floral-embroidered-abaya/"
    },
    {
-      "cat" : "formal",
+      "cat" : "embroidered",
       "id" : "imported-textured-korean-nida",
       "img" : [
          "images/products/textured-nida-1.jpg",
@@ -269,17 +280,6 @@ const PRODUCTS = [
       "n" : "Imported Textured Korean Nida Navy Blue Abaya (Deep Navy Blue)",
       "p" : 6999,
       "url" : "abayas/imported-textured-korean-nida/"
-   },
-   {
-      "cat" : "formal",
-      "id" : "navy-bow-tie-abaya",
-      "img" : [
-         "images/products/navy-bow-1.jpg",
-         "images/products/navy-bow-2.jpg"
-      ],
-      "n" : "Bow Tie Neck Abaya (Navy Blue)",
-      "p" : 6999,
-      "url" : "abayas/navy-bow-tie-abaya/"
    }
 ]
 ;

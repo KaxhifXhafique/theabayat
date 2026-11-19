@@ -319,7 +319,7 @@ $sections</div>
     <div>
       <div class="kicker">About Abayat</div>
       <h2 class="title">Buy abayas online in Pakistan</h2>
-      <p>Abayat brings you premium modest wear for every part of your day. Our <a href="party-wear/">party wear abayas</a> feature pearl work, beads and lace for weddings and Eid, our <a href="embroidered-abaya/">embroidered abayas</a> add delicate detail, and our <a href="formal-wear/">corporate and formal abayas</a> come in rich colours like navy blue for office and special days. For every day, choose <a href="casual-wear/">daily wear and casual abayas</a> or a clean <a href="simple-abaya/">simple / plain abaya</a>.</p>
+      <p>Abayat brings you premium modest wear for every part of your day. Our <a href="party-wear/">party wear abayas</a> feature pearl work, beads and lace for weddings and Eid, our <a href="embroidered-abaya/">embroidered abayas</a> add delicate detail, and our <a href="formal-wear/">corporate and formal abayas</a> are coming soon. For every day, choose <a href="casual-wear/">daily wear and casual abayas</a> or a clean <a href="simple-abaya/">simple / plain abaya</a>.</p>
       <p>Every abaya is Rs. 6,999, available in sizes 50 to 60, and delivered all over Pakistan with cash on delivery. Shop all categories: $catlinks. Order in a minute on WhatsApp.</p>
     </div>
   </div>
