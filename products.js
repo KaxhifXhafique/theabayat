@@ -114,14 +114,69 @@ const PRODUCTS = [
    },
    {
       "cat" : "casual",
-      "id" : "navy-bow-tie-abaya",
+      "id" : "imported-textured-korean-nida",
       "img" : [
-         "images/products/navy-bow-1.jpg",
-         "images/products/navy-bow-2.jpg"
+         "images/products/textured-nida-1.jpg",
+         "images/products/textured-nida-2.jpg",
+         "images/products/textured-nida-3.jpg"
       ],
-      "n" : "Bow Tie Neck Abaya (Navy Blue)",
-      "p" : 6999,
-      "url" : "abayas/navy-bow-tie-abaya/"
+      "n" : "Button Down Straight Lace Abaya (Blue)",
+      "p" : 4499,
+      "url" : "abayas/imported-textured-korean-nida/"
+   },
+   {
+      "cat" : "casual",
+      "id" : "printed-button-down-abaya-black",
+      "img" : [
+         "images/products/printed-black-1.jpg",
+         "images/products/printed-black-2.jpg"
+      ],
+      "n" : "Printed Button Down Abaya (Black)",
+      "p" : 2999,
+      "url" : "abayas/printed-button-down-abaya-black/"
+   },
+   {
+      "cat" : "casual",
+      "id" : "printed-button-down-abaya-pink",
+      "img" : [
+         "images/products/printed-pink-1.jpg",
+         "images/products/printed-pink-2.jpg"
+      ],
+      "n" : "Printed Button Down Abaya (Pink)",
+      "p" : 2999,
+      "url" : "abayas/printed-button-down-abaya-pink/"
+   },
+   {
+      "cat" : "casual",
+      "id" : "printed-button-down-abaya-blue",
+      "img" : [
+         "images/products/printed-blue-1.jpg",
+         "images/products/printed-blue-2.jpg"
+      ],
+      "n" : "Printed Button Down Abaya (Light Blue)",
+      "p" : 2999,
+      "url" : "abayas/printed-button-down-abaya-blue/"
+   },
+   {
+      "cat" : "casual",
+      "id" : "printed-button-down-abaya-cream",
+      "img" : [
+         "images/products/printed-cream-1.jpg",
+         "images/products/printed-cream-2.jpg"
+      ],
+      "n" : "Printed Button Down Abaya (Cream)",
+      "p" : 2999,
+      "url" : "abayas/printed-button-down-abaya-cream/"
+   },
+   {
+      "cat" : "casual",
+      "id" : "butterfly-abaya-black-pink",
+      "img" : [
+         "images/products/butterfly-black-pink-1.jpg"
+      ],
+      "n" : "Butterfly Style Abaya (Black & Pink)",
+      "p" : 5999,
+      "url" : "abayas/butterfly-abaya-black-pink/"
    },
    {
       "cat" : "party",
@@ -270,16 +325,48 @@ const PRODUCTS = [
       "url" : "abayas/black-floral-embroidered-abaya/"
    },
    {
-      "cat" : "embroidered",
-      "id" : "imported-textured-korean-nida",
+      "cat" : "formal",
+      "id" : "half-zip-bow-abaya-navy",
       "img" : [
-         "images/products/textured-nida-1.jpg",
-         "images/products/textured-nida-2.jpg",
-         "images/products/textured-nida-3.jpg"
+         "images/products/zip-bow-navy-1.jpg",
+         "images/products/zip-bow-navy-2.jpg"
       ],
-      "n" : "Imported Textured Korean Nida Navy Blue Abaya (Deep Navy Blue)",
-      "p" : 6999,
-      "url" : "abayas/imported-textured-korean-nida/"
+      "n" : "Half Zip Bow Abaya With Pockets (Navy Blue)",
+      "p" : 4999,
+      "url" : "abayas/half-zip-bow-abaya-navy/"
+   },
+   {
+      "cat" : "formal",
+      "id" : "half-zip-bow-abaya-rose",
+      "img" : [
+         "images/products/zip-bow-rose-1.jpg",
+         "images/products/zip-bow-rose-2.jpg"
+      ],
+      "n" : "Half Zip Bow Abaya With Pockets (Dusty Rose)",
+      "p" : 4999,
+      "url" : "abayas/half-zip-bow-abaya-rose/"
+   },
+   {
+      "cat" : "formal",
+      "id" : "half-zip-bow-abaya-purple",
+      "img" : [
+         "images/products/zip-bow-purple-1.jpg",
+         "images/products/zip-bow-purple-2.jpg"
+      ],
+      "n" : "Half Zip Bow Abaya With Pockets (Purple)",
+      "p" : 4999,
+      "url" : "abayas/half-zip-bow-abaya-purple/"
+   },
+   {
+      "cat" : "formal",
+      "id" : "half-zip-bow-abaya-maroon",
+      "img" : [
+         "images/products/zip-bow-maroon-1.jpg",
+         "images/products/zip-bow-maroon-2.jpg"
+      ],
+      "n" : "Half Zip Bow Abaya With Pockets (Dark Maroon)",
+      "p" : 4999,
+      "url" : "abayas/half-zip-bow-abaya-maroon/"
    }
 ]
 ;

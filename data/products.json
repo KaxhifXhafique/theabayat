@@ -329,22 +329,122 @@
     },
     {
       "cat" : "casual",
-      "color" : "Navy Blue",
-      "d" : "A smart navy blue abaya with a soft bow tie at the neckline and tie-up cuffs. Clean lines and a gentle fall make it perfect for office and formal days.",
+      "color" : "Blue",
+      "d" : "A button down, front open straight abaya in blue imported textured Korean nida, finished with fine cut-work lace on the cuffs.",
       "f" : [
-        "Soft flowing fabric",
-        "Bow tie neckline",
-        "Tie-up sleeve cuffs",
-        "Straight, modest silhouette"
+        "Button down front open straight abaya",
+        "Cut-work lace on the cuffs",
+        "Fabric: imported textured Korean nida",
+        "Size: length 56, sleeves 23, chest 24"
       ],
-      "id" : "navy-bow-tie-abaya",
+      "id" : "imported-textured-korean-nida",
       "img" : [
-        "navy-bow-1.jpg",
-        "navy-bow-2.jpg"
+        "textured-nida-1.jpg",
+        "textured-nida-2.jpg",
+        "textured-nida-3.jpg"
       ],
-      "n" : "Bow Tie Neck Abaya (Navy Blue)",
+      "n" : "Button Down Straight Lace Abaya (Blue)",
       "o" : 0,
-      "p" : 6999,
+      "p" : 4499,
+      "tag" : "New"
+    },
+    {
+      "cat" : "casual",
+      "color" : "Black",
+      "d" : "A printed, front open button down abaya in a soft floral black print. Made from light mix georgette for easy everyday wear.",
+      "f" : [
+        "Printed front open button down abaya",
+        "Fabric: mix georgette",
+        "Colour: Black",
+        "Size: length 60, sleeves 23, chest 26"
+      ],
+      "id" : "printed-button-down-abaya-black",
+      "img" : [
+        "printed-black-1.jpg",
+        "printed-black-2.jpg"
+      ],
+      "n" : "Printed Button Down Abaya (Black)",
+      "o" : 0,
+      "p" : 2999,
+      "tag" : "New"
+    },
+    {
+      "cat" : "casual",
+      "color" : "Pink",
+      "d" : "A printed, front open button down abaya in a soft floral pink print. Made from light mix georgette for easy everyday wear.",
+      "f" : [
+        "Printed front open button down abaya",
+        "Fabric: mix georgette",
+        "Colour: Pink",
+        "Size: length 60, sleeves 23, chest 26"
+      ],
+      "id" : "printed-button-down-abaya-pink",
+      "img" : [
+        "printed-pink-1.jpg",
+        "printed-pink-2.jpg"
+      ],
+      "n" : "Printed Button Down Abaya (Pink)",
+      "o" : 0,
+      "p" : 2999,
+      "tag" : "New"
+    },
+    {
+      "cat" : "casual",
+      "color" : "Light Blue",
+      "d" : "A printed, front open button down abaya in a soft floral light blue print. Made from light mix georgette for easy everyday wear.",
+      "f" : [
+        "Printed front open button down abaya",
+        "Fabric: mix georgette",
+        "Colour: Light Blue",
+        "Size: length 60, sleeves 23, chest 26"
+      ],
+      "id" : "printed-button-down-abaya-blue",
+      "img" : [
+        "printed-blue-1.jpg",
+        "printed-blue-2.jpg"
+      ],
+      "n" : "Printed Button Down Abaya (Light Blue)",
+      "o" : 0,
+      "p" : 2999,
+      "tag" : "New"
+    },
+    {
+      "cat" : "casual",
+      "color" : "Cream",
+      "d" : "A printed, front open button down abaya in a soft floral cream print. Made from light mix georgette for easy everyday wear.",
+      "f" : [
+        "Printed front open button down abaya",
+        "Fabric: mix georgette",
+        "Colour: Cream",
+        "Size: length 60, sleeves 23, chest 26"
+      ],
+      "id" : "printed-button-down-abaya-cream",
+      "img" : [
+        "printed-cream-1.jpg",
+        "printed-cream-2.jpg"
+      ],
+      "n" : "Printed Button Down Abaya (Cream)",
+      "o" : 0,
+      "p" : 2999,
+      "tag" : "New"
+    },
+    {
+      "cat" : "casual",
+      "color" : "Black & Pink",
+      "d" : "A flowing butterfly style abaya in black with soft pink panels, made from imported Korean nida and chiffon.",
+      "f" : [
+        "Butterfly style abaya",
+        "Fabric: imported Korean nida and chiffon",
+        "Colour: black and pink",
+        "Size: length 60, sleeves 23, chest 26"
+      ],
+      "id" : "butterfly-abaya-black-pink",
+      "img" : [
+        "butterfly-black-pink-1.jpg"
+      ],
+      "n" : "Butterfly Style Abaya (Black & Pink)",
+      "o" : 0,
+      "p" : 5999,
       "tag" : "New"
     },
     {
@@ -602,24 +702,83 @@
       "tag" : "New"
     },
     {
-      "cat" : "embroidered",
-      "color" : "Deep Navy Blue",
-      "d" : "A deep navy blue abaya in imported textured Korean nida. The fabric has a soft sheen and a woven floral texture, with fine cut-work lace on the cuffs.",
+      "cat" : "formal",
+      "color" : "Navy Blue",
+      "d" : "A smart corporate abaya in navy blue nida with a front half zip, a bow at the neck and handy side pockets. Neat and comfortable for the office.",
       "f" : [
-        "Imported textured Korean nida",
-        "Cut-work lace cuffs",
-        "Deep navy blue abaya",
-        "Soft, breathable and easy to carry"
+        "Front half zip with bow style neck",
+        "Side pockets",
+        "Fabric: nida",
+        "Size: length 58, sleeves 23, chest 25"
       ],
-      "id" : "imported-textured-korean-nida",
+      "id" : "half-zip-bow-abaya-navy",
       "img" : [
-        "textured-nida-1.jpg",
-        "textured-nida-2.jpg",
-        "textured-nida-3.jpg"
+        "zip-bow-navy-1.jpg",
+        "zip-bow-navy-2.jpg"
       ],
-      "n" : "Imported Textured Korean Nida Navy Blue Abaya (Deep Navy Blue)",
+      "n" : "Half Zip Bow Abaya With Pockets (Navy Blue)",
       "o" : 0,
-      "p" : 6999,
+      "p" : 4999,
+      "tag" : "New"
+    },
+    {
+      "cat" : "formal",
+      "color" : "Dusty Rose",
+      "d" : "A smart corporate abaya in dusty rose nida with a front half zip, a bow at the neck and handy side pockets. Neat and comfortable for the office.",
+      "f" : [
+        "Front half zip with bow style neck",
+        "Side pockets",
+        "Fabric: nida",
+        "Size: length 58, sleeves 23, chest 25"
+      ],
+      "id" : "half-zip-bow-abaya-rose",
+      "img" : [
+        "zip-bow-rose-1.jpg",
+        "zip-bow-rose-2.jpg"
+      ],
+      "n" : "Half Zip Bow Abaya With Pockets (Dusty Rose)",
+      "o" : 0,
+      "p" : 4999,
+      "tag" : "New"
+    },
+    {
+      "cat" : "formal",
+      "color" : "Purple",
+      "d" : "A smart corporate abaya in purple nida with a front half zip, a bow at the neck and handy side pockets. Neat and comfortable for the office.",
+      "f" : [
+        "Front half zip with bow style neck",
+        "Side pockets",
+        "Fabric: nida",
+        "Size: length 58, sleeves 23, chest 25"
+      ],
+      "id" : "half-zip-bow-abaya-purple",
+      "img" : [
+        "zip-bow-purple-1.jpg",
+        "zip-bow-purple-2.jpg"
+      ],
+      "n" : "Half Zip Bow Abaya With Pockets (Purple)",
+      "o" : 0,
+      "p" : 4999,
+      "tag" : "New"
+    },
+    {
+      "cat" : "formal",
+      "color" : "Dark Maroon",
+      "d" : "A smart corporate abaya in dark maroon nida with a front half zip, a bow at the neck and handy side pockets. Neat and comfortable for the office.",
+      "f" : [
+        "Front half zip with bow style neck",
+        "Side pockets",
+        "Fabric: nida",
+        "Size: length 58, sleeves 23, chest 25"
+      ],
+      "id" : "half-zip-bow-abaya-maroon",
+      "img" : [
+        "zip-bow-maroon-1.jpg",
+        "zip-bow-maroon-2.jpg"
+      ],
+      "n" : "Half Zip Bow Abaya With Pockets (Dark Maroon)",
+      "o" : 0,
+      "p" : 4999,
       "tag" : "New"
     }
   ],
